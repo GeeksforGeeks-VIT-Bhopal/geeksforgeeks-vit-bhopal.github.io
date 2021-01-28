@@ -1,5 +1,7 @@
 # GeeksforGeeks VIT Bhopal
 
+Website: [http://geeksforgeeks-vit-bhopal.github.io](http://geeksforgeeks-vit-bhopal.github.io)
+
 ## Available Scripts
 
 In the project directory, you can run:
