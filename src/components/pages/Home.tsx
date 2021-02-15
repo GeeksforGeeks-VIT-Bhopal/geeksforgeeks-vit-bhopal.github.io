@@ -8,10 +8,12 @@ import { database } from "../../store";
 import Layout from "../Layout";
 import Navbar from "../Navbar";
 import Primary from "../buttons/Primary";
+import Secondary from "../buttons/Secondary";
+import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="flex flex-col gap-5 sm:items-center mt-32 px-8 md:px-0">
+    <header className="flex flex-col gap-5 sm:items-center py-32 px-8 md:px-0">
       <div className="font-extrabold">
         <span className="text-primary text-4xl md:text-5xl leading-relaxed">
           GeeksforGeeks{" "}
@@ -27,7 +29,7 @@ const Header = () => {
   );
 };
 
-const Email = () => {
+const EmailSection = () => {
   const [isSent, setIsSent] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -50,7 +52,7 @@ const Email = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-20 gap-8 bg-background-secondary-light dark:bg-background-secondary-dark py-14 shadow-sm">
+    <div className="flex flex-col items-center justify-center py-14 gap-8 bg-background-secondary-light dark:bg-background-secondary-dark shadow-sm">
       <div className="text:sm md:text-2xl font-extrabold text-secondary dark:text-white">
         Want to attend our upcoming event?
       </div>
@@ -75,6 +77,86 @@ const Email = () => {
   );
 };
 
+const TeamSection = () => {
+  return (
+    <div className="flex flex-col gap-5 sm:items-center py-32 px-8 md:px-0 bg-background-primary-light dark:bg-background-primary-dark">
+      <div className="font-extrabold">
+        <span className="text-secondary dark:text-white text-3xl md:text-5xl leading-relaxed">
+          Meet our team
+        </span>
+      </div>
+      <div className="text-base font-medium text-gray-500 uppercase tracking-widest">
+        People behind working hard to make this possible
+      </div>
+      <a href="/" className="py-4">
+        <Primary>Team</Primary>
+      </a>
+    </div>
+  );
+};
+
+const EventsSection = () => {
+  return (
+    <div className="flex flex-col gap-5 sm:items-center py-32 px-8 md:px-0 bg-background-secondary-light dark:bg-background-secondary-dark">
+      <div className="font-extrabold">
+        <span className="text-secondary dark:text-white text-3xl md:text-5xl leading-relaxed">
+          Events
+        </span>
+      </div>
+      <div className="text-base font-medium text-gray-500 uppercase tracking-widest">
+        See our past events and stay in the loop for new ones
+      </div>
+      <a href="/" className="py-4">
+        <Primary>Events</Primary>
+      </a>
+    </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className="flex flex-col gap-5 sm:items-center py-32 px-8 md:px-0 bg-background-primary-light dark:bg-background-primary-dark">
+      <div className="font-extrabold">
+        <span className="text-secondary dark:text-white text-3xl md:text-5xl leading-relaxed">
+          Connect with us
+        </span>
+      </div>
+      <div className="text-base font-medium text-gray-500 uppercase tracking-widest">
+        Never miss out anything what happens here
+      </div>
+      <div className="flex gap-4 h-14 mt-12">
+        <a href="https://github.com/GeeksforGeeks-VIT-Bhopal" target="_blank">
+          <Secondary>
+            <FaGithub fontSize={20} />
+            <span className="hidden sm:block">Github</span>
+          </Secondary>
+        </a>
+        <a href="https://discord.gg/Mb8B9HcyjT" target="_blank">
+          <Secondary>
+            <FaDiscord fontSize={20} />
+            <span className="hidden sm:block">Discord</span>
+          </Secondary>
+        </a>
+        <a href="https://www.instagram.com/geeksforgeeks_vitb/" target="_blank">
+          <Secondary>
+            <FaInstagram fontSize={20} />
+            <span className="hidden sm:block">Instagram</span>
+          </Secondary>
+        </a>
+        <a
+          href="https://www.linkedin.com/company/geeksforgeeks-vitb/"
+          target="_blank"
+        >
+          <Secondary>
+            <FaLinkedin fontSize={20} />
+            <span className="hidden sm:block">Linkedin</span>
+          </Secondary>
+        </a>
+      </div>
+    </footer>
+  );
+};
+
 interface HomeProps {
   handleTheme: Function;
 }
@@ -84,7 +166,10 @@ const Home: React.FC<HomeProps> = ({ handleTheme }) => {
     <Layout>
       <Navbar handleTheme={handleTheme} />
       <Header />
-      <Email />
+      <EmailSection />
+      <TeamSection />
+      <EventsSection />
+      <Footer />
     </Layout>
   );
 };

@@ -17,22 +17,19 @@ const Navbar: React.FC<NavbarProps> = ({ handleTheme }) => {
           <img src={Logo} className="h-8 cursor-pointer" />
         </div>
         <div className="flex-grow md:flex-grow-0 flex justify-end gap-3 h-12">
-          <Secondary onClick={() => handleTheme()}>
-            <FaMoon fontSize={18} />
-          </Secondary>
           <a href="https://github.com/GeeksforGeeks-VIT-Bhopal" target="_blank">
             <Secondary>
               <FaGithub fontSize={20} />
-              <span className="md:block hidden">Code with us</span>
             </Secondary>
           </a>
           <a href="https://discord.gg/Mb8B9HcyjT" target="_blank">
             <Secondary>
               <FaDiscord fontSize={20} />
-              <span className="md:block hidden">Talk with us</span>
             </Secondary>
           </a>
-          <Primary>Join us</Primary>
+          <Secondary onClick={() => handleTheme()}>
+            <FaMoon fontSize={18} />
+          </Secondary>
         </div>
       </div>
     </nav>
