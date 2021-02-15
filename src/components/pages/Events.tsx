@@ -10,7 +10,6 @@ import Navbar from "../Navbar";
 import Primary from "../buttons/Primary";
 import Secondary from "../buttons/Secondary";
 import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -89,9 +88,9 @@ const TeamSection = () => {
       <div className="text-base font-medium text-gray-500 uppercase tracking-widest">
         People behind working hard to make this possible
       </div>
-      <Link to="/team" className="py-4">
+      <a href="/" className="py-4">
         <Primary>Team</Primary>
-      </Link>
+      </a>
     </div>
   );
 };
@@ -107,9 +106,9 @@ const EventsSection = () => {
       <div className="text-base font-medium text-gray-500 uppercase tracking-widest">
         See our past events and stay in the loop for new ones
       </div>
-      <Link to="/events" className="py-4">
+      <a href="/" className="py-4">
         <Primary>Events</Primary>
-      </Link>
+      </a>
     </div>
   );
 };
@@ -158,11 +157,10 @@ const Footer = () => {
   );
 };
 
-const Home: React.FC = () => {
+const Events: React.FC = () => {
   return (
     <>
       <Header />
-      <EmailSection />
       <TeamSection />
       <EventsSection />
       <Footer />
@@ -170,4 +168,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Events;

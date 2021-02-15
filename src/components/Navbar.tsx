@@ -4,6 +4,7 @@ import Secondary from "./buttons/Secondary";
 
 // Image
 import Logo from "../images/logo.png";
+import { Link } from "react-router-dom";
 
 interface NavbarProps {
   handleTheme: Function;
@@ -13,9 +14,11 @@ const Navbar: React.FC<NavbarProps> = ({ handleTheme }) => {
   return (
     <nav className="flex justify-center items-center">
       <div className="flex justify-between md:max-w-5xl w-full px-3 py-3 md:px-4 md:py-6 xl:px-0">
-        <div className="hidden md:flex items-center h-12">
-          <img src={Logo} className="h-8 cursor-pointer" />
-        </div>
+        <Link to="/">
+          <div className="hidden md:flex items-center h-12">
+            <img src={Logo} className="h-8 cursor-pointer" />
+          </div>
+        </Link>
         <div className="flex-grow md:flex-grow-0 flex justify-end gap-3 h-12">
           <a href="https://github.com/GeeksforGeeks-VIT-Bhopal" target="_blank">
             <Secondary>

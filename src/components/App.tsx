@@ -1,6 +1,13 @@
 // Components
 import { useState } from "react";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
+// Pages
 import Home from "./pages/Home";
+import Team from "./pages/Team";
+import Events from "./pages/Events";
+import Layout from "./Layout";
+import Navbar from "./Navbar";
 
 type ThemeType = "dark" | "light";
 
@@ -12,9 +19,24 @@ const App = () => {
   };
 
   return (
-    <div className={theme}>
-      <Home handleTheme={handleTheme} />
-    </div>
+    <Router>
+      <div className={theme}>
+        <Layout>
+          <Navbar handleTheme={handleTheme} />
+          <Switch>
+            <Route path="/events">
+              <Events />
+            </Route>
+            <Route path="/team">
+              <Team />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </Layout>
+      </div>
+    </Router>
   );
 };
 
