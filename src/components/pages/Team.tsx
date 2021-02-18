@@ -14,13 +14,16 @@ const Header = () => {
 
 const Main = () => {
   return (
-    <div className="flex justify-center py-8">
-      <div className="flex-1 grid grid-cols-4 gap-5 max-w-5xl">
-        {team.map(({ name, position }) => (
-          <div className="bg-white rounded-md border shadow-sm flex flex-col items-center py-3">
-            <div className="font-semibold py-2">{name}</div>
-            <div className="text-sm text-gray-600 bg-gray-50 w-full flex justify-center py-2 uppercase">
-              {position}
+    <div className="flex justify-center py-8 mb-48">
+      <div className="grid grid-cols-4 gap-5">
+        {team.map(({ name, position, image, links }) => (
+          <div className="px-3 py-8 bg-white dark:bg-secondary rounded-md border dark:border-transparent shadow-sm hover:shadow flex flex-col items-center gap-5">
+            <img src={image} className="w-24 h-24 rounded-full" />
+            <div className="flex flex-col items-center gap-1">
+              <div className="font-semibold dark:text-white">{name}</div>
+              <div className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">
+                {position}
+              </div>
             </div>
           </div>
         ))}

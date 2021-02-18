@@ -13,20 +13,20 @@ const team: Member[] = [
     name: "Nishant",
     image:
       "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/nishant.jpeg",
-    position: "Technical Head",
+    position: "Chairperson",
     links: {
-      instagram: "https://www.instagram.com/_kritika.shah/",
-      linkedin: "https://www.linkedin.com/in/kritika-shah-631006181/",
+      instagram: "https://www.instagram.com/nishdrummer/",
+      linkedin: "https://www.linkedin.com/in/amnishant/",
     },
   },
   {
     name: "Hardik",
     image:
       "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/hardik.jpeg",
-    position: "Technical Head",
+    position: "Vice-Chairperson",
     links: {
-      instagram: "https://www.instagram.com/_kritika.shah/",
-      linkedin: "https://www.linkedin.com/in/kritika-shah-631006181/",
+      instagram: "https://www.instagram.com/_ye.bhi.thik.hai_/",
+      linkedin: "https://www.linkedin.com/in/hardikkr/",
     },
   },
   {
