@@ -10,9 +10,29 @@ interface Member {
 
 const team: Member[] = [
   {
+    name: "Nishant",
+    image:
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/nishant.jpeg",
+    position: "Technical Head",
+    links: {
+      instagram: "https://www.instagram.com/_kritika.shah/",
+      linkedin: "https://www.linkedin.com/in/kritika-shah-631006181/",
+    },
+  },
+  {
+    name: "Hardik",
+    image:
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/hardik.jpeg",
+    position: "Technical Head",
+    links: {
+      instagram: "https://www.instagram.com/_kritika.shah/",
+      linkedin: "https://www.linkedin.com/in/kritika-shah-631006181/",
+    },
+  },
+  {
     name: "Kritika Shah",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/kritika.jpeg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/kritika.jpeg",
     position: "Technical Head",
     links: {
       instagram: "https://www.instagram.com/_kritika.shah/",
@@ -22,7 +42,7 @@ const team: Member[] = [
   {
     name: "Smit Barmase",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/smit.jpg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/smit.jpg",
     position: "Technical Co-head",
     links: {
       instagram: "https://www.instagram.com/smitbarmase",
@@ -32,7 +52,7 @@ const team: Member[] = [
   {
     name: "Laavart",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/laavart.jpg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/laavart.jpg",
     position: "Design & Branding Head",
     links: {
       instagram: "https://www.instagram.com/jaadu_s_ra_s_al_ghul/",
@@ -42,7 +62,7 @@ const team: Member[] = [
   {
     name: "Abhay Singh Rana",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/abhay.jpg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/abhay.jpg",
     position: "Design & Branding Co-head",
     links: {
       instagram: "https://www.instagram.com/iiabhayii/",
@@ -52,7 +72,7 @@ const team: Member[] = [
   {
     name: "Aishwar Govil",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/aishwar.jpg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/aishwar.jpg",
     position: "Events Head",
     links: {
       instagram: "https://www.instagram.com/aishwargovil/",
@@ -62,7 +82,7 @@ const team: Member[] = [
   {
     name: "Mohajit Paul",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/mohajit.jpeg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/mohajit.jpeg",
     position: "Events Co-head",
     links: {
       instagram: "https://instagram.com/mohahajit?igshid=1h0yswildi10r",
@@ -72,7 +92,7 @@ const team: Member[] = [
   {
     name: "Manglam Tripathi",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/manglam.jpg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/manglam.jpg",
     position: "PR & Outreach Head",
     links: {
       instagram: "https://www.instagram.com/_manglam_tripathi_/",
@@ -82,14 +102,14 @@ const team: Member[] = [
   {
     name: "Mahika Agrawal",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/mahika.jpeg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/mahika.jpeg",
     position: "PR & Outreach Co-head",
     links: { instagram: "https://www.instagram.com/mahikkaaa", linkedin: null },
   },
   {
     name: "Ayushmaan Singh Rajput",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/ayushmaan.jpeg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/ayushmaan.jpg",
     position: "Social Media Head",
     links: {
       instagram: "https://www.instagram.com/ohh_hmmm/",
@@ -99,7 +119,7 @@ const team: Member[] = [
   {
     name: "Tejaswini Johri",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/tejaswini.jpg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/tejaswini.jpg",
     position: "Social Media Co-head",
     links: {
       instagram: "https://instagram.com/tejaswinijohri?igshid=v29pdphy4c31",
@@ -109,7 +129,7 @@ const team: Member[] = [
   {
     name: "Khushi Guptaa",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/khushi.jpg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/khushi.jpg",
     position: "Marketing Head",
     links: {
       instagram: "https://www.instagram.com/_khushii21/",
@@ -119,7 +139,7 @@ const team: Member[] = [
   {
     name: "Ansh Raizada",
     image:
-      "https://github.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/tree/main/src/images/ansh.jpg",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/ansh.jpg",
     position: "Marketing Co-head",
     links: {
       instagram: "https://www.instagram.com/ansh_82881/",
