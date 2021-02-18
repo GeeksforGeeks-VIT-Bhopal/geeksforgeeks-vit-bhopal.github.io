@@ -1,14 +1,4 @@
-const team = [
-  { name: "Hello", image: "", position: "Head" },
-  { name: "Hello", image: "", position: "Head" },
-  { name: "Hello", image: "", position: "Head" },
-  { name: "Hello", image: "", position: "Head" },
-  { name: "Hello", image: "", position: "Head" },
-  { name: "Hello", image: "", position: "Head" },
-  { name: "Hello", image: "", position: "Head" },
-  { name: "Hello", image: "", position: "Head" },
-  { name: "Hello", image: "", position: "Head" },
-];
+import team from "../../constants/team";
 
 const Header = () => {
   return (
