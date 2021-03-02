@@ -2,7 +2,7 @@
   "name": "geeksforgeeks-vit-bhopal.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://geeksforgeeks-vit-bhopal.github.io",
+  "homepage": "https://geeksforgeeks-vit-bhopal.github.io/",
   "dependencies": {
     "@craco/craco": "^6.1.0",
     "@tailwindcss/postcss7-compat": "^2.0.2",
