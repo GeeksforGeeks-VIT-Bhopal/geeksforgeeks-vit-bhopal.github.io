@@ -1,6 +1,11 @@
 // Components
 import { useState } from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import {
+  Route,
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
 // Pages
 import Home from "./pages/Home";
@@ -24,15 +29,16 @@ const App = () => {
         <Layout>
           <Navbar handleTheme={handleTheme} />
           <Switch>
-            <Route path="/geekweeklocal">
+            <Route exact path="/geekweeklocal">
               <GeekWeekLocal />
             </Route>
-            <Route path="/team">
+            <Route exact path="/team">
               <Team />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Home />
             </Route>
+            <Redirect to="/" />
           </Switch>
         </Layout>
       </div>
