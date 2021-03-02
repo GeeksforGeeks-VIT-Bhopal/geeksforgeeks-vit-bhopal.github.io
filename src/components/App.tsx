@@ -5,7 +5,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 // Pages
 import Home from "./pages/Home";
 import Team from "./pages/Team";
-import Events from "./pages/Events";
+import GeekWeekLocal from "./pages/GeekWeekLocal";
 import Layout from "./Layout";
 import Navbar from "./Navbar";
 
@@ -24,8 +24,8 @@ const App = () => {
         <Layout>
           <Navbar handleTheme={handleTheme} />
           <Switch>
-            <Route path="/events">
-              <Events />
+            <Route path="/geekweeklocal">
+              <GeekWeekLocal />
             </Route>
             <Route path="/team">
               <Team />

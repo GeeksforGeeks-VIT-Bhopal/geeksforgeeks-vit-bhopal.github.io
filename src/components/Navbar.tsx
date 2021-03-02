@@ -1,10 +1,11 @@
 import { FaDiscord, FaGithub, FaMoon } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 import Primary from "./buttons/Primary";
 import Secondary from "./buttons/Secondary";
 
 // Image
 import Logo from "../images/logo.png";
-import { Link } from "react-router-dom";
 
 interface NavbarProps {
   handleTheme: Function;
@@ -20,6 +21,15 @@ const Navbar: React.FC<NavbarProps> = ({ handleTheme }) => {
           </div>
         </Link>
         <div className="flex-grow md:flex-grow-0 flex justify-end gap-3 h-12">
+          <Link to="/geekweeklocal">
+            <Primary>Geek Week: Local</Primary>
+          </Link>
+          <Link to="/">
+            <Secondary>Home</Secondary>
+          </Link>
+          <Link to="/team">
+            <Secondary>Team</Secondary>
+          </Link>
           <a href="https://github.com/GeeksforGeeks-VIT-Bhopal" target="_blank">
             <Secondary>
               <FaGithub fontSize={20} />

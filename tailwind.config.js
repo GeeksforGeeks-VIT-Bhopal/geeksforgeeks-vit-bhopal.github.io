@@ -11,6 +11,9 @@ module.exports = {
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
     },
     extend: {
+      fontFamily: {
+        bungee: ["Bungee"],
+      },
       colors: {
         background: {
           primary: {

@@ -2,4 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+
+  .geek-shadow {
+    box-shadow: 10px 10px 0px 0px black;
+  }
+}

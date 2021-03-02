@@ -164,7 +164,6 @@ const Home: React.FC = () => {
       <Header />
       <EmailSection />
       <TeamSection />
-      <EventsSection />
       <Footer />
     </>
   );
