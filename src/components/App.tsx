@@ -1,11 +1,6 @@
 // Components
 import { useState } from "react";
-import {
-  Route,
-  BrowserRouter as Router,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { Route, HashRouter, Switch, Redirect } from "react-router-dom";
 
 // Pages
 import Home from "./pages/Home";
@@ -24,7 +19,7 @@ const App = () => {
   };
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <div className={theme}>
         <Layout>
           <Navbar handleTheme={handleTheme} />
@@ -42,7 +37,7 @@ const App = () => {
           </Switch>
         </Layout>
       </div>
-    </Router>
+    </HashRouter>
   );
 };
 
