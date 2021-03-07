@@ -1,4 +1,5 @@
-import { title } from "process";
+//import { title } from "process";
+import img1 from '../../images/GeekWeekLocal/1.png'
 
 const Card: React.FC<{
   className?: string;
@@ -14,8 +15,8 @@ const Card: React.FC<{
   return (
     <div
       className={`${
-        shadow ? "geek-shadow" : ""
-      } flex flex-col border-4 rounded-lg border-black ${className} ${color}`}
+        shadow ? "" : ""
+      } flex flex-col neuro hover:neuro-hover rounded-lg border-white ${className} ${color}`}
       {...props}
     >
       {children}
@@ -46,12 +47,12 @@ const AnimatedButton: React.FC<{ color: "bg-white" | "bg-yellow-400" }> = ({
   return (
     <div>
       <button
-        className={`text-2xl focus:outline-none relative z-10 transform -translate-x-1 -translate-y-1 h-16 w-96 border-black border-4 rounded-full hover:translate-x-1 hover:translate-y-1 transition-transform ${color}`}
+        className={`text-2xl focus:outline-none relative z-10 transform -translate-x-1 -translate-y-1 h-16 w-48 border-black border-4 rounded-tl-lg rounded-br-lg hover:translate-x-1 hover:translate-y-1 transition-transform ${color}`}
         {...props}
       >
         {children}
       </button>
-      <Shadow className="rounded-full h-16 w-96" />
+        {/* <Shadow className="rounded-full h-14 w-45" />  */}
     </div>
   );
 };
@@ -88,16 +89,17 @@ const Header = () => {
   return (
     <header className="py-6 px-5">
       <Card>
-        <div className="flex justify-between p-6 bg-black text-white text-lg">
+        <div className="flex justify-between p-6 bg-white text-black text-lg">
           <a>GEEK WEEK: LOCAL</a>
-          <div className="flex space-x-8">
-            <span>Rank</span>
-            <span>Challenges</span>
-            <span>Guilds</span>
-            <span>About</span>
+          <div className="relative flex space-x-8 flex-col md:flex-row">
+            <span><a href="#" className="hover:text-red-500">Rank</a></span>
+            <span><a href="./GeekWeekLocal/#Challenge" className="hover:text-red-500">Challenges</a></span>
+            <span><a href="#" className="hover:text-red-500">Guilds</a></span>
+            <span><a href="#" className="hover:text-red-500">About</a></span>
           </div>
         </div>
-        <div className="flex flex-col gap-16 py-8 px-48">
+        <div className="flex flex-wrap">
+        <div className="flex flex-col gap-16 lg:w-3/5 py-8 px-4 md:px-10 ">
           <div className="flex flex-col gap-8 mt-16">
             <div className="text-7xl">GEEK WEEK: Local</div>
             <div className="font-sans tracking-normal font-medium text-lg">
@@ -107,10 +109,14 @@ const Header = () => {
               rewards.
             </div>
           </div>
-          <div className="relative right-4 flex gap-14">
+          <div className="flex flex-wrap relative right-0 flex gap-14 sm:gap-8">
             <AnimatedButton color="bg-yellow-400">Register</AnimatedButton>
             <AnimatedButton color="bg-white">Chat with us</AnimatedButton>
           </div>
+        </div>
+        <div className="mt-2 mb-6 px-2 lg:w-2/5 md:px-4">
+          <img src={img1}></img>
+        </div>
         </div>
       </Card>
     </header>
@@ -123,11 +129,11 @@ const DailyChallenges = ({
   daily: { title: string; content: string }[];
 }) => {
   return (
-    <div className="flex flex-col py-20 px-10 gap-20">
+    <div id="Challenge" className="flex flex-col py-20 px-10 gap-20">
       <div className="flex flex-col items-center">
         <TitlePanel>Daily Challenges</TitlePanel>
       </div>
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols:2 lg:grid-cols-3">
         {daily.map(({ content, title }) => (
           <Challenge content={content} title={title} />
         ))}
@@ -146,7 +152,7 @@ const WeekChallenges = ({
       <div className="flex flex-col items-center">
         <TitlePanel>Week Long Challenges</TitlePanel>
       </div>
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols:2 lg:grid-cols-3">
         {week.map(({ content, title }) => (
           <Challenge content={content} title={title} />
         ))}
@@ -159,7 +165,7 @@ const Ranking = ({ guild, hacker }: { guild: string[]; hacker: string[] }) => {
   return (
     <div className="flex flex-col px-6">
       <Card color="bg-white" shadow={true}>
-        <div className="flex flex-col gap-16 py-24 px-48">
+        <div className="flex flex-col gap-16 py-24 text-left px-8 lg:px-16 md:px-16 ">
           <div className="flex flex-col gap-4">
             <div className="text-3xl">Ranking</div>
             <div className="font-sans tracking-normal font-medium text-lg">
@@ -169,7 +175,7 @@ const Ranking = ({ guild, hacker }: { guild: string[]; hacker: string[] }) => {
               rewards.
             </div>
           </div>
-          <div className="flex gap-14">
+          <div className="flex flex-wrap gap-14">
             <div>
               <div className="text-2xl">Guild Ranking</div>
               <ul className="space-y-3 py-4">
@@ -195,10 +201,10 @@ const Ranking = ({ guild, hacker }: { guild: string[]; hacker: string[] }) => {
 
 const Guild = () => {
   return (
-    <div className="flex flex-col px-6 my-28">
+    <div className="flex flex-wrap flex-col px-6 my-28">
       <Card color="bg-white" shadow={true}>
-        <div className="flex flex-col gap-16 py-24 px-48">
-          <div className="flex flex-col gap-4">
+        <div className="flex flex-col flex-wrap gap-16 py-24 px-12 lg:px-48 md:px-24 ">
+          <div className="flex text-left flex-wrap flex-col">
             <div className="text-3xl">Guild</div>
             <div className="font-sans tracking-normal font-medium text-lg">
               One of the best parts of our community is that it allows people to
@@ -214,11 +220,11 @@ const Guild = () => {
               leaderboard.
             </div>
           </div>
-          <div className="relative right-4 flex gap-14">
+          <div className="relative right-4 flex flex-wrap gap-14">
             <AnimatedButton color="bg-yellow-400">
-              Create a guild
+              Create One
             </AnimatedButton>
-            <AnimatedButton color="bg-white">join a guide</AnimatedButton>
+            <AnimatedButton color="bg-white">join a guild</AnimatedButton>
           </div>
         </div>
       </Card>
@@ -230,7 +236,7 @@ const Sponsors = () => {
   return (
     <div className="flex flex-col px-6 my-28">
       <Card color="bg-white" shadow={true}>
-        <div className="flex flex-col gap-16 py-24 px-48">
+        <div className="flex flex-col gap-16 py-24 px-10 lg:px-48">
           <div className="flex flex-col gap-4">
             <div className="text-3xl">Sponsors</div>
             <div className="font-sans tracking-normal font-medium text-lg">
@@ -279,15 +285,16 @@ const GeekWeekLocal: React.FC = () => {
 
   const guild = ["Someone", "Someone else", "Someone again"];
 
-  const hacker = ["Someone", "Someone el", "Someone agai"];
+  const hacker = ["Someone", "Someone else", "Someone again"];
 
   return (
-    <div className="bg-primary font-bungee tracking-widest pb-28">
+    <div className="bg-white font-bungee tracking-widest pb-28">
       <Header />
       <DailyChallenges daily={daily} />
       <WeekChallenges week={week} />
       <Ranking guild={guild} hacker={hacker} />
       <Guild />
+      {/* <About/> */}
       <Sponsors />
     </div>
   );
