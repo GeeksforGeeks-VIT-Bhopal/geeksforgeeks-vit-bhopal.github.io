@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   purge: {
@@ -27,6 +28,8 @@ module.exports = {
         },
         primary: "#308d46",
         secondary: "#25282c",
+        orange: colors.orange,
+        helix: "#FFA827",
       },
     },
   },
