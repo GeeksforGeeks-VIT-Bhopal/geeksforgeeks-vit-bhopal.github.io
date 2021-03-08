@@ -5,19 +5,4 @@
 @layer base {
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
-
-  .geek-shadow {
-    box-shadow: 10px 10px 0px 0px black;
-  }
-
-  .neuro{
-    background: #d6d6d6;
-    box-shadow:  9px 9px 18px #b6b6b6,
-             -9px -9px 18px #f6f6f6;
-  }
- .neuro-hover{
-    background: #d6d6d6;
-    box-shadow: inset 9px 9px 18px #b6b6b6,
-             inset -9px -9px 18px #f6f6f6;
-  }
 }

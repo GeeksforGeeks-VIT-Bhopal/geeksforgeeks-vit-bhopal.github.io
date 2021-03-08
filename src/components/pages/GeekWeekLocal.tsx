@@ -54,7 +54,7 @@ const TitlePanel: React.FC<{ className?: string }> = ({
 }) => {
   return (
     <div
-      className={`px-6 py-3 lg:px-12 lg:py-6 flex justify-center items-center text-xl lg:text-4xl gap-8 bg-white rounded shadow ${className}`}
+      className={`px-6 py-3 lg:px-12 lg:py-6 flex justify-center items-center text-xl lg:text-4xl bg-white rounded shadow ${className}`}
     >
       {children}
     </div>
@@ -66,7 +66,7 @@ const Challenge: React.FC<{
   content: string;
 }> = ({ title, content }) => {
   return (
-    <Card className="p-6 lg:p-10 flex flex-col gap-2 lg:gap-4">
+    <Card className="p-6 lg:p-10 flex flex-col space-y-2 lg:space-y-4 mr-5 mb-5">
       <div className="text-lg lg:text-2xl">{title}</div>
       <div className="font-sans font-bold tracking-normal text-base lg:text-lg">
         {content}
@@ -89,9 +89,9 @@ const Header = () => {
       <Card>
         <div className="flex justify-between py-6 px-8 text-black text-lg">
           <a className="hidden lg:block">GEEK WEEK: LOCAL</a>
-          <div className="flex gap-4 lg:gap-8 text-sm md:text-base flex-wrap">
+          <div className="flex text-sm md:text-base flex-wrap">
             {options.map((option) => (
-              <span key={option.name}>
+              <span key={option.name} className="ml-4 lg:mb-4">
                 <HashLink to={option.to} className="hover:text-red-500">
                   {option.name}
                 </HashLink>
@@ -100,8 +100,8 @@ const Header = () => {
           </div>
         </div>
         <div className="flex lg:flex-row flex-col items-center justify-between px-8 lg:px-28">
-          <div className="flex flex-col gap-16 py-4 lg:py-24 max-w-2xl">
-            <div className="flex flex-col gap-8">
+          <div className="flex flex-col space-y-16 py-4 lg:py-24 max-w-2xl">
+            <div className="flex flex-col space-y-8">
               <div className="text-4xl lg:text-7xl">GEEK WEEK: Local</div>
               <div className="font-sans tracking-normal font-medium text-base md:text-lg">
                 Build your way to greatness all week long at Geek Week: Local by
@@ -110,7 +110,7 @@ const Header = () => {
                 rewards.
               </div>
             </div>
-            <div className="flex flex-col items-start lg:flex-row gap-8">
+            <div className="flex flex-col items-start lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
               <AnimatedButton colored>Register</AnimatedButton>
               <AnimatedButton>Chat with us</AnimatedButton>
             </div>
@@ -129,12 +129,12 @@ const DailyChallenges = ({
 }) => {
   return (
     <a id="ranking">
-      <div className="flex flex-col px-5 gap-5 mt-12 items-start">
+      <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
         <TitlePanel>
-          <img src={DailyImage} className="h-20" />
+          <img src={DailyImage} className="mr-8 h-20" />
           Daily Challenges
         </TitlePanel>
-        <div className="w-full grid grid-cols-1 gap-5 md:grid-cols:2 lg:grid-cols-3">
+        <div className="w-full grid grid-cols-1 md:grid-cols:2 lg:grid-cols-3">
           {daily.map(({ content, title }) => (
             <Challenge content={content} title={title} />
           ))}
@@ -151,12 +151,12 @@ const WeekChallenges = ({
 }) => {
   return (
     <a id="ranking">
-      <div className="flex flex-col px-5 gap-5 mt-12 items-start">
+      <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
         <TitlePanel>
-          <img src={WeekImage} className="h-20" />
+          <img src={WeekImage} className="mr-8 h-20" />
           Week Long Challenges
         </TitlePanel>
-        <div className="w-full grid grid-cols-1 gap-5 md:grid-cols:2 lg:grid-cols-2">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2">
           {weekly.map(({ content, title }) => (
             <Challenge content={content} title={title} />
           ))}
@@ -172,8 +172,8 @@ const Ranking = ({ guild, hacker }: { guild: string[]; hacker: string[] }) => {
       <div className="px-5 mt-12">
         <Card>
           <div className="flex justify-between items-end p-6 lg:p-24">
-            <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-6">
+            <div className="flex flex-col space-y-8">
+              <div className="flex flex-col space-y-6">
                 <div className="text-xl lg:text-4xl">Ranking</div>
                 <div className="font-sans tracking-normal font-medium text-base lg:text-lg">
                   Build your way to greatness all week long at Geek Week: Local
@@ -182,7 +182,7 @@ const Ranking = ({ guild, hacker }: { guild: string[]; hacker: string[] }) => {
                   yourself rewards.
                 </div>
               </div>
-              <div className="flex lg:flex-row flex-col gap-12 lg:gap-24">
+              <div className="flex lg:flex-row flex-col space-y-12 lg:space-y-0 lg:space-x-24">
                 <div>
                   <div className="text-xl lg:text-3xl">Guild Ranking</div>
                   <ul className="ml-2 space-y-4 mt-8 text-base lg:text-2xl">
@@ -214,8 +214,8 @@ const Guild = () => {
     <a id="guild">
       <div className="px-5 mt-12">
         <Card>
-          <div className="flex flex-col p-6 lg:p-24 gap-6 lg:gap-14">
-            <div className="flex flex-col gap-3 lg:gap-6">
+          <div className="flex flex-col p-6 lg:p-24 space-y-6 lg:space-y-14">
+            <div className="flex flex-col space-y-3 lg:space-y-6">
               <div className="text-xl lg:text-4xl">Guild</div>
               <div className="font-sans tracking-normal font-medium text-base lg:text-lg">
                 One of the best parts of our community is that it allows people
@@ -231,7 +231,7 @@ const Guild = () => {
                 leaderboard.
               </div>
             </div>
-            <div className="flex gap-12">
+            <div className="flex space-x-12">
               <AnimatedButton colored>Join a guild</AnimatedButton>
             </div>
           </div>
@@ -246,14 +246,14 @@ const Sponsors = () => {
     <a id="sponsor">
       <div className="px-5 mt-12">
         <Card>
-          <div className="flex flex-col p-6 lg:p-24 gap-6 lg:gap-14">
-            <div className="flex flex-col gap-3 lg:gap-6">
+          <div className="flex flex-col p-6 lg:p-24 space-y-6 lg:space-y-14">
+            <div className="flex flex-col space-y-3 lg:space-y-6">
               <div className="text-xl lg:text-4xl">Sponsors</div>
               <div className="font-sans tracking-normal font-medium text-lg">
                 Some thing about sponsor
               </div>
             </div>
-            <div className="flex gap-12">
+            <div className="flex space-x-12">
               <AnimatedButton>Nice Company</AnimatedButton>
             </div>
           </div>
@@ -266,11 +266,11 @@ const Sponsors = () => {
 const About = () => {
   return (
     <a id="about">
-      <div className="flex flex-col items-start px-5 mt-12 gap-5">
+      <div className="flex flex-col items-start px-5 mt-12 space-y-5">
         <TitlePanel>About</TitlePanel>
         <Card>
-          <div className="flex p-6 lg:p-16 gap-16 max-w-4xl">
-            <div className="flex flex-col gap-3 lg:gap-6">
+          <div className="flex p-6 lg:p-16 space-x-16 max-w-4xl">
+            <div className="flex flex-col space-y-3 lg:space-y-6">
               <div className="text-lg lg:text-4xl">What's Geek Week:Local?</div>
               <div className="font-sans tracking-normal font-medium text-lg">
                 Some thing here
@@ -280,8 +280,8 @@ const About = () => {
           </div>
         </Card>
         <Card>
-          <div className="flex p-6 lg:p-16 gap-16  max-w-4xl">
-            <div className="flex flex-col gap-3 lg:gap-6">
+          <div className="flex p-6 lg:p-16 space-x-16  max-w-4xl">
+            <div className="flex flex-col space-y-3 lg:space-y-6">
               <div className="text-lg lg:text-4xl">What's Geek Week:Local?</div>
               <div className="font-sans tracking-normal font-medium text-lg">
                 Some thing here
