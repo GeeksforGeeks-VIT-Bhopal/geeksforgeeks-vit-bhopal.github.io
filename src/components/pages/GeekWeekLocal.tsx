@@ -1,9 +1,16 @@
 import { HashLink } from "react-router-hash-link";
 
+// Images
 import HeaderImage from "../../images/GeekWeekLocal/code.png";
 import DailyImage from "../../images/GeekWeekLocal/hii.png";
 import WeekImage from "../../images/GeekWeekLocal/sleep.png";
 import RankingImage from "../../images/GeekWeekLocal/sit.png";
+
+// Data
+import daily from "../../data/daily-challenges";
+import weekly from "../../data/weekly-challenges";
+import guild from "../../data/guild-ranking";
+import hacker from "../../data/hacker-ranking";
 
 const Card: React.FC<{
   className?: string;
@@ -141,9 +148,9 @@ const DailyChallenges = ({
 };
 
 const WeekChallenges = ({
-  week,
+  weekly,
 }: {
-  week: { title: string; content: string }[];
+  weekly: { title: string; content: string }[];
 }) => {
   return (
     <a id="ranking">
@@ -153,7 +160,7 @@ const WeekChallenges = ({
           Week Long Challenges
         </TitlePanel>
         <div className="w-full grid grid-cols-1 gap-5 md:grid-cols:2 lg:grid-cols-2">
-          {week.map(({ content, title }) => (
+          {weekly.map(({ content, title }) => (
             <Challenge content={content} title={title} />
           ))}
         </div>
@@ -292,46 +299,12 @@ const About = () => {
 };
 
 const GeekWeekLocal: React.FC = () => {
-  const daily = [
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-  ];
-
-  const week = [
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-  ];
-
-  const guild = ["Someone", "Someone else", "Someone again"];
-
-  const hacker = ["Someone", "Someone else", "Someone again"];
-
   return (
     <div className="bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700 font-bungee tracking-widest pb-12">
       <Header />
       <About />
       <DailyChallenges daily={daily} />
-      <WeekChallenges week={week} />
+      <WeekChallenges weekly={weekly} />
       <Ranking guild={guild} hacker={hacker} />
       <Guild />
       <Sponsors />
