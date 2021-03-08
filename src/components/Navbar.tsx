@@ -20,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ handleTheme }) => {
             <img src={Logo} className="h-8 cursor-pointer" />
           </div>
         </Link>
-        <div className="flex-grow md:flex-grow-0 flex justify-end gap-3 h-12">
+        <div className="flex-grow z-10 flex-wrap md:flex-grow-0 flex justify-end gap-3 h-12">
           <Link to="/geekweeklocal">
             <Primary>Geek Week: Local</Primary>
           </Link>
