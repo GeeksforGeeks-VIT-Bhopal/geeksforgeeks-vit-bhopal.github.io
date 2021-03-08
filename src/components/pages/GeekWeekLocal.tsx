@@ -259,6 +259,90 @@ const Sponsors = () => {
   );
 };
 
+const About = () => {
+return(
+  <div className="flex flex-col px-6 my-28">
+    <div className="flex flex-col py-10 items-center">
+        <TitlePanel>About</TitlePanel>
+      </div>
+    
+    <div className="flex flex-col lg:px-20 align-center">
+      <div className="flex flex-wrap md:px-10 lg:px-25">
+        <div className="md:w-1/4 mb-6 md:mb-0 px-2"><img src={img2}></img></div>
+        <div className="container mx-auto md:w-3/4 md:py-8">
+        <Card color="bg-white" shadow={true}>
+             <div className="py-6 px-2">
+               <div className="px-2 py-6 text-1xl">
+                 What's Geek Week:Local?
+               </div>
+               <div className="font-sans tracking-normal font-medium">
+                 -A week-long Event of creating hacks both small and big <br></br>
+                 -Choose between daily and weekly Challenges<br></br>
+                 -The more Challenges you solve the more points you wil earn.<br></br>
+               </div>
+             </div>
+        </Card>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap md:px-10 hidden lg:px-25 md:flex">
+        <div className="container mx-auto md:w-3/4 md:py-8">
+        <Card color="bg-white" shadow={true}>
+             <div className="py-6 px-2">
+               <div className="px-2 py-6 text-1xl">
+                 What's Geek Week:Local?
+               </div>
+               <div className="font-sans tracking-normal font-medium">
+                 -A week-long Event of creating hacks both small and big <br></br>
+                 -Choose between daily and weekly Challenges<br></br>
+                 -The more Challenges you solve the more points you wil earn.<br></br>
+               </div>
+             </div>
+        </Card>
+        </div>
+        <div className="md:w-1/4 mb-6 md:mb-0 px-2"><img src={img3}></img></div>
+      </div>
+      
+      <div className="flex flex-wrap py-6 md:px-10 lg:px-25 md:hidden">
+        <div className="md:w-1/4 mb-6 md:mb-0 px-2"><img src={img3}></img></div>
+        <div className="container mx-auto md:w-3/4 md:py-8">
+        <Card color="bg-white" shadow={true}>
+             <div className="py-6 px-2">
+               <div className="px-2 py-6 text-1xl">
+                 What's Geek Week:Local?
+               </div>
+               <div className="font-sans tracking-normal font-medium">
+                 -A week-long Event of creating hacks both small and big <br></br>
+                 -Choose between daily and weekly Challenges<br></br>
+                 -The more Challenges you solve the more points you wil earn.<br></br>
+               </div>
+             </div>
+        </Card>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap py-6 md:px-10 lg:px-25">
+        <div className="md:w-1/4 mb-6 md:mb-0 px-2"><img src={img4}></img></div>
+        <div className="container mx-auto md:w-3/4 md:py-8">
+        <Card color="bg-white" shadow={true}>
+             <div className="py-6 px-2">
+               <div className="px-2 py-6 text-1xl">
+                 What's Geek Week:Local?
+               </div>
+               <div className="font-sans tracking-normal font-medium">
+                 -A week-long Event of creating hacks both small and big <br></br>
+                 -Choose between daily and weekly Challenges<br></br>
+                 -The more Challenges you solve the more points you wil earn.<br></br>
+               </div>
+             </div>
+        </Card>
+        </div>
+      </div>
+    </div>
+</div>
+);
+};
+
 const GeekWeekLocal: React.FC = () => {
   const daily = [
     {
