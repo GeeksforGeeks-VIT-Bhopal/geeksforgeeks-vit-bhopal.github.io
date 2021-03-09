@@ -5,8 +5,6 @@ import { MdArrowForward, MdDone } from "react-icons/md";
 import { database } from "../../store";
 
 // Components
-import Layout from "../Layout";
-import Navbar from "../Navbar";
 import Primary from "../buttons/Primary";
 import Secondary from "../buttons/Secondary";
 import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -14,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="flex flex-col gap-5 sm:items-center py-32 px-8 md:px-0">
+    <header className="flex flex-col space-y-5 sm:items-center py-32 px-8 md:px-0">
       <div className="font-extrabold">
         <span className="text-primary text-4xl md:text-5xl leading-relaxed">
           GeeksforGeeks{" "}
@@ -53,12 +51,12 @@ const EmailSection = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center py-14 gap-8 bg-background-secondary-light dark:bg-background-secondary-dark shadow-sm">
+    <div className="flex flex-col items-center justify-center py-14 space-y-8 bg-background-secondary-light dark:bg-background-secondary-dark shadow-sm">
       <div className="text:sm md:text-2xl font-extrabold text-secondary dark:text-white">
         Want to attend our upcoming event?
       </div>
       <form
-        className="flex-col flex sm:flex-row items-center gap-3"
+        className="flex-col flex sm:flex-row items-center space-y-3"
         onSubmit={handleEmail}
       >
         {!isSent && (
@@ -80,7 +78,7 @@ const EmailSection = () => {
 
 const TeamSection = () => {
   return (
-    <div className="flex flex-col gap-5 sm:items-center py-32 px-8 md:px-0 bg-background-primary-light dark:bg-background-primary-dark">
+    <div className="flex flex-col space-y-5 sm:items-center py-32 px-8 md:px-0 bg-background-primary-light dark:bg-background-primary-dark">
       <div className="font-extrabold">
         <span className="text-secondary dark:text-white text-3xl md:text-5xl leading-relaxed">
           Meet our team
@@ -96,27 +94,9 @@ const TeamSection = () => {
   );
 };
 
-const EventsSection = () => {
-  return (
-    <div className="flex flex-col gap-5 sm:items-center py-32 px-8 md:px-0 bg-background-secondary-light dark:bg-background-secondary-dark">
-      <div className="font-extrabold">
-        <span className="text-secondary dark:text-white text-3xl md:text-5xl leading-relaxed">
-          Events
-        </span>
-      </div>
-      <div className="text-base font-medium text-gray-500 uppercase tracking-widest">
-        See our past events and stay in the loop for new ones
-      </div>
-      <Link to="/events" className="py-4">
-        <Primary>Events</Primary>
-      </Link>
-    </div>
-  );
-};
-
 const Footer = () => {
   return (
-    <footer className="flex flex-col gap-5 sm:items-center py-32 px-8 md:px-0 bg-background-primary-light dark:bg-background-primary-dark">
+    <footer className="flex flex-col space-y-5 sm:items-center py-32 px-8 md:px-0 bg-background-primary-light dark:bg-background-primary-dark">
       <div className="font-extrabold">
         <span className="text-secondary dark:text-white text-3xl md:text-5xl leading-relaxed">
           Connect with us
@@ -125,7 +105,7 @@ const Footer = () => {
       <div className="text-base font-medium text-gray-500 uppercase tracking-widest">
         Never miss out anything what happens here
       </div>
-      <div className="flex gap-4 h-14 mt-12">
+      <div className="flex space-x-4 h-14 mt-12">
         <a href="https://github.com/GeeksforGeeks-VIT-Bhopal" target="_blank">
           <Secondary>
             <FaGithub fontSize={20} />

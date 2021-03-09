@@ -20,27 +20,35 @@ const Navbar: React.FC<NavbarProps> = ({ handleTheme }) => {
             <img src={Logo} className="h-8 cursor-pointer" />
           </div>
         </Link>
-        <div className="flex-grow md:flex-grow-0 flex justify-end gap-3 h-12">
-          <Link to="/geekweeklocal">
+        <div className="flex-grow z-10 flex-wrap md:flex-grow-0 flex justify-end h-12">
+          <Link to="/geekweeklocal" className="ml-3 mb-3">
             <Primary>Geek Week: Local</Primary>
           </Link>
-          <Link to="/">
+          <Link to="/" className="ml-3 mb-3">
             <Secondary>Home</Secondary>
           </Link>
-          <Link to="/team">
+          <Link to="/team" className="ml-3 mb-3">
             <Secondary>Team</Secondary>
           </Link>
-          <a href="https://github.com/GeeksforGeeks-VIT-Bhopal" target="_blank">
+          <a
+            href="https://github.com/GeeksforGeeks-VIT-Bhopal"
+            target="_blank"
+            className="ml-3 mb-3"
+          >
             <Secondary>
               <FaGithub fontSize={20} />
             </Secondary>
           </a>
-          <a href="https://discord.gg/Mb8B9HcyjT" target="_blank">
+          <a
+            href="https://discord.gg/Mb8B9HcyjT"
+            target="_blank"
+            className="ml-3 mb-3"
+          >
             <Secondary>
               <FaDiscord fontSize={20} />
             </Secondary>
           </a>
-          <Secondary onClick={() => handleTheme()}>
+          <Secondary onClick={() => handleTheme()} className="ml-3 mb-3">
             <FaMoon fontSize={18} />
           </Secondary>
         </div>

@@ -1,19 +1,23 @@
 import { HashLink } from "react-router-hash-link";
 
+// Images
 import HeaderImage from "../../images/GeekWeekLocal/code.png";
 import DailyImage from "../../images/GeekWeekLocal/hii.png";
 import WeekImage from "../../images/GeekWeekLocal/sleep.png";
 import RankingImage from "../../images/GeekWeekLocal/sit.png";
 
+// Data
+import daily from "../../data/daily-challenges";
+import weekly from "../../data/weekly-challenges";
+import guild from "../../data/guild-ranking";
+import hacker from "../../data/hacker-ranking";
+
 const Card: React.FC<{
   className?: string;
-  colored?: boolean;
-}> = ({ children, colored, className, ...props }) => {
+}> = ({ children, className, ...props }) => {
   return (
     <div
-      className={`flex flex-col rounded shadow ${className} ${
-        colored ? "bg-helix" : "bg-white"
-      }`}
+      className={`flex flex-col bg-white rounded shadow ${className}`}
       {...props}
     >
       {children}
@@ -30,7 +34,7 @@ const AnimatedButton: React.FC<{ colored?: boolean }> = ({
     <div>
       <div className="rounded-full bg-black">
         <button
-          className={`text-2xl focus:outline-none relative z-10 transform -translate-x-2 -translate-y-2 border-black border-4 rounded-full hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform py-4 px-10 ${
+          className={`text-sm md:text-2xl focus:outline-none relative z-10 transform -translate-x-2 -translate-y-2 border-black border-4 rounded-full hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform py-3 px-6 md:py-4 md:px-10 ${
             colored
               ? "bg-gradient-to-tr from-orange-500 via-red-500 to-pink-600"
               : "bg-white"
@@ -50,7 +54,7 @@ const TitlePanel: React.FC<{ className?: string }> = ({
 }) => {
   return (
     <div
-      className={`px-12 py-6 flex justify-center items-center text-4xl gap-8 bg-white rounded shadow ${className}`}
+      className={`px-6 py-3 lg:px-12 lg:py-6 flex justify-center items-center text-xl lg:text-4xl bg-white rounded shadow ${className}`}
     >
       {children}
     </div>
@@ -62,9 +66,9 @@ const Challenge: React.FC<{
   content: string;
 }> = ({ title, content }) => {
   return (
-    <Card className="p-10 flex flex-col gap-4">
-      <div className="text-2xl">{title}</div>
-      <div className="font-sans font-bold tracking-normal text-xl">
+    <Card className="p-6 lg:p-10 flex flex-col space-y-2 lg:space-y-4 mr-5 mb-5">
+      <div className="text-lg lg:text-2xl">{title}</div>
+      <div className="font-sans font-bold tracking-normal text-base lg:text-lg">
         {content}
       </div>
     </Card>
@@ -73,8 +77,9 @@ const Challenge: React.FC<{
 
 const Header = () => {
   const options = [
-    { name: "Ranking", to: "#ranking" },
+    { name: "About", to: "#about" },
     { name: "Challenges", to: "#challenges" },
+    { name: "Ranking", to: "#ranking" },
     { name: "Guilds", to: "#guilds" },
     { name: "Sponsor", to: "#sponsor" },
   ];
@@ -82,11 +87,11 @@ const Header = () => {
   return (
     <header className="mt-5 px-5">
       <Card>
-        <div className="flex justify-between p-6 text-black text-lg">
-          <a>GEEK WEEK: LOCAL</a>
-          <div className="relative flex space-x-8 flex-col md:flex-row">
+        <div className="flex justify-between py-6 px-8 text-black text-lg">
+          <a className="hidden lg:block">GEEK WEEK: LOCAL</a>
+          <div className="flex text-sm md:text-base flex-wrap">
             {options.map((option) => (
-              <span key={option.name}>
+              <span key={option.name} className="ml-4 lg:mb-4">
                 <HashLink to={option.to} className="hover:text-red-500">
                   {option.name}
                 </HashLink>
@@ -94,23 +99,23 @@ const Header = () => {
             ))}
           </div>
         </div>
-        <div className="flex items-center justify-between px-28">
-          <div className="flex flex-col gap-16 py-24 max-w-2xl">
-            <div className="flex flex-col gap-8">
-              <div className="text-7xl">GEEK WEEK: Local</div>
-              <div className="font-sans tracking-normal font-medium text-lg">
+        <div className="flex lg:flex-row flex-col items-center justify-between px-8 lg:px-28">
+          <div className="flex flex-col space-y-16 py-4 lg:py-24 max-w-2xl">
+            <div className="flex flex-col space-y-8">
+              <div className="text-4xl lg:text-7xl">GEEK WEEK: Local</div>
+              <div className="font-sans tracking-normal font-medium text-base md:text-lg">
                 Build your way to greatness all week long at Geek Week: Local by
                 completing challenges both big and small. You’ll expand your
                 network, skillset, and hacker portfolio, and earn yourself
                 rewards.
               </div>
             </div>
-            <div className="flex flex-wrap relative right-0  gap-14 sm:gap-8">
+            <div className="flex flex-col items-start lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
               <AnimatedButton colored>Register</AnimatedButton>
               <AnimatedButton>Chat with us</AnimatedButton>
             </div>
           </div>
-          <img src={HeaderImage} className="h-96"></img>
+          <img src={HeaderImage} className="h-32 my-6 lg:h-96"></img>
         </div>
       </Card>
     </header>
@@ -124,12 +129,12 @@ const DailyChallenges = ({
 }) => {
   return (
     <a id="ranking">
-      <div className="flex flex-col px-5 gap-5 mt-12 items-start">
+      <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
         <TitlePanel>
-          <img src={DailyImage} className="h-20" />
+          <img src={DailyImage} className="mr-8 h-20" />
           Daily Challenges
         </TitlePanel>
-        <div className="w-full grid grid-cols-1 gap-5 md:grid-cols:2 lg:grid-cols-3">
+        <div className="w-full grid grid-cols-1 md:grid-cols:2 lg:grid-cols-3">
           {daily.map(({ content, title }) => (
             <Challenge content={content} title={title} />
           ))}
@@ -140,19 +145,19 @@ const DailyChallenges = ({
 };
 
 const WeekChallenges = ({
-  week,
+  weekly,
 }: {
-  week: { title: string; content: string }[];
+  weekly: { title: string; content: string }[];
 }) => {
   return (
     <a id="ranking">
-      <div className="flex flex-col px-5 gap-5 mt-12 items-start">
+      <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
         <TitlePanel>
-          <img src={WeekImage} className="h-20" />
+          <img src={WeekImage} className="mr-8 h-20" />
           Week Long Challenges
         </TitlePanel>
-        <div className="w-full grid grid-cols-1 gap-5 md:grid-cols:2 lg:grid-cols-2">
-          {week.map(({ content, title }) => (
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2">
+          {weekly.map(({ content, title }) => (
             <Challenge content={content} title={title} />
           ))}
         </div>
@@ -166,29 +171,29 @@ const Ranking = ({ guild, hacker }: { guild: string[]; hacker: string[] }) => {
     <a id="ranking">
       <div className="px-5 mt-12">
         <Card>
-          <div className="flex justify-between items-end p-24">
-            <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-6">
-                <div className="text-4xl">Ranking</div>
-                <div className="font-sans tracking-normal font-medium text-lg">
+          <div className="flex justify-between items-end p-6 lg:p-24">
+            <div className="flex flex-col space-y-8">
+              <div className="flex flex-col space-y-6">
+                <div className="text-xl lg:text-4xl">Ranking</div>
+                <div className="font-sans tracking-normal font-medium text-base lg:text-lg">
                   Build your way to greatness all week long at Geek Week: Local
                   by completing challenges both big and small. You’ll expand
                   your network, skillset, and hacker portfolio, and earn
                   yourself rewards.
                 </div>
               </div>
-              <div className="flex flex-wrap gap-24">
+              <div className="flex lg:flex-row flex-col space-y-12 lg:space-y-0 lg:space-x-24">
                 <div>
-                  <div className="text-3xl">Guild Ranking</div>
-                  <ul className="ml-2 space-y-4 mt-8 text-2xl">
+                  <div className="text-xl lg:text-3xl">Guild Ranking</div>
+                  <ul className="ml-2 space-y-4 mt-8 text-base lg:text-2xl">
                     {guild.map((name, index) => (
                       <li>{`${index + 1} ${name}`}</li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <div className="text-3xl">Hacker Ranking</div>
-                  <ul className=" ml-2 space-y-4 mt-8 text-2xl">
+                  <div className="text-xl lg:text-3xl">Hacker Ranking</div>
+                  <ul className=" ml-2 space-y-4 mt-8 text-base lg:text-2xl">
                     {hacker.map((name, index) => (
                       <li>{`${index + 1} ${name}`}</li>
                     ))}
@@ -196,7 +201,7 @@ const Ranking = ({ guild, hacker }: { guild: string[]; hacker: string[] }) => {
                 </div>
               </div>
             </div>
-            <img src={RankingImage} className="h-72" />
+            <img src={RankingImage} className="hidden lg:block h-72" />
           </div>
         </Card>
       </div>
@@ -209,10 +214,10 @@ const Guild = () => {
     <a id="guild">
       <div className="px-5 mt-12">
         <Card>
-          <div className="flex flex-col p-24 gap-14">
-            <div className="flex flex-col gap-6">
-              <div className="text-4xl">Guild</div>
-              <div className="font-sans tracking-normal font-medium text-lg">
+          <div className="flex flex-col p-6 lg:p-24 space-y-6 lg:space-y-14">
+            <div className="flex flex-col space-y-3 lg:space-y-6">
+              <div className="text-xl lg:text-4xl">Guild</div>
+              <div className="font-sans tracking-normal font-medium text-base lg:text-lg">
                 One of the best parts of our community is that it allows people
                 to meet and make connections with others, regardless of where
                 you live. Form a guild of hackers and fight for a spot on the
@@ -226,9 +231,8 @@ const Guild = () => {
                 leaderboard.
               </div>
             </div>
-            <div className="flex gap-12">
-              <AnimatedButton colored>Create One</AnimatedButton>
-              <AnimatedButton>Join a guild</AnimatedButton>
+            <div className="flex space-x-12">
+              <AnimatedButton colored>Join a guild</AnimatedButton>
             </div>
           </div>
         </Card>
@@ -242,14 +246,14 @@ const Sponsors = () => {
     <a id="sponsor">
       <div className="px-5 mt-12">
         <Card>
-          <div className="flex flex-col p-24 gap-14">
-            <div className="flex flex-col gap-6">
-              <div className="text-4xl">Sponsors</div>
+          <div className="flex flex-col p-6 lg:p-24 space-y-6 lg:space-y-14">
+            <div className="flex flex-col space-y-3 lg:space-y-6">
+              <div className="text-xl lg:text-4xl">Sponsors</div>
               <div className="font-sans tracking-normal font-medium text-lg">
                 Some thing about sponsor
               </div>
             </div>
-            <div className="flex gap-12">
+            <div className="flex space-x-12">
               <AnimatedButton>Nice Company</AnimatedButton>
             </div>
           </div>
@@ -260,129 +264,44 @@ const Sponsors = () => {
 };
 
 const About = () => {
-return(
-  <div className="flex flex-col px-6 my-28">
-    <div className="flex flex-col py-10 items-center">
+  return (
+    <a id="about">
+      <div className="flex flex-col items-start px-5 mt-12 space-y-5">
         <TitlePanel>About</TitlePanel>
-      </div>
-    
-    <div className="flex flex-col lg:px-20 align-center">
-      <div className="flex flex-wrap md:px-10 lg:px-25">
-        <div className="md:w-1/4 mb-6 md:mb-0 px-2"><img src={img2}></img></div>
-        <div className="container mx-auto md:w-3/4 md:py-8">
-        <Card color="bg-white" shadow={true}>
-             <div className="py-6 px-2">
-               <div className="px-2 py-6 text-1xl">
-                 What's Geek Week:Local?
-               </div>
-               <div className="font-sans tracking-normal font-medium">
-                 -A week-long Event of creating hacks both small and big <br></br>
-                 -Choose between daily and weekly Challenges<br></br>
-                 -The more Challenges you solve the more points you wil earn.<br></br>
-               </div>
-             </div>
+        <Card>
+          <div className="flex p-6 lg:p-16 space-x-16 max-w-4xl">
+            <div className="flex flex-col space-y-3 lg:space-y-6">
+              <div className="text-lg lg:text-4xl">What's Geek Week:Local?</div>
+              <div className="font-sans tracking-normal font-medium text-lg">
+                Some thing here
+              </div>
+            </div>
+            <img src={DailyImage} className="hidden lg:block h-32"></img>
+          </div>
         </Card>
-        </div>
-      </div>
-
-      <div className="flex flex-wrap md:px-10 hidden lg:px-25 md:flex">
-        <div className="container mx-auto md:w-3/4 md:py-8">
-        <Card color="bg-white" shadow={true}>
-             <div className="py-6 px-2">
-               <div className="px-2 py-6 text-1xl">
-                 What's Geek Week:Local?
-               </div>
-               <div className="font-sans tracking-normal font-medium">
-                 -A week-long Event of creating hacks both small and big <br></br>
-                 -Choose between daily and weekly Challenges<br></br>
-                 -The more Challenges you solve the more points you wil earn.<br></br>
-               </div>
-             </div>
+        <Card>
+          <div className="flex p-6 lg:p-16 space-x-16  max-w-4xl">
+            <div className="flex flex-col space-y-3 lg:space-y-6">
+              <div className="text-lg lg:text-4xl">What's Geek Week:Local?</div>
+              <div className="font-sans tracking-normal font-medium text-lg">
+                Some thing here
+              </div>
+            </div>
+            <img src={WeekImage} className="hidden lg:block h-32"></img>
+          </div>
         </Card>
-        </div>
-        <div className="md:w-1/4 mb-6 md:mb-0 px-2"><img src={img3}></img></div>
       </div>
-      
-      <div className="flex flex-wrap py-6 md:px-10 lg:px-25 md:hidden">
-        <div className="md:w-1/4 mb-6 md:mb-0 px-2"><img src={img3}></img></div>
-        <div className="container mx-auto md:w-3/4 md:py-8">
-        <Card color="bg-white" shadow={true}>
-             <div className="py-6 px-2">
-               <div className="px-2 py-6 text-1xl">
-                 What's Geek Week:Local?
-               </div>
-               <div className="font-sans tracking-normal font-medium">
-                 -A week-long Event of creating hacks both small and big <br></br>
-                 -Choose between daily and weekly Challenges<br></br>
-                 -The more Challenges you solve the more points you wil earn.<br></br>
-               </div>
-             </div>
-        </Card>
-        </div>
-      </div>
-
-      <div className="flex flex-wrap py-6 md:px-10 lg:px-25">
-        <div className="md:w-1/4 mb-6 md:mb-0 px-2"><img src={img4}></img></div>
-        <div className="container mx-auto md:w-3/4 md:py-8">
-        <Card color="bg-white" shadow={true}>
-             <div className="py-6 px-2">
-               <div className="px-2 py-6 text-1xl">
-                 What's Geek Week:Local?
-               </div>
-               <div className="font-sans tracking-normal font-medium">
-                 -A week-long Event of creating hacks both small and big <br></br>
-                 -Choose between daily and weekly Challenges<br></br>
-                 -The more Challenges you solve the more points you wil earn.<br></br>
-               </div>
-             </div>
-        </Card>
-        </div>
-      </div>
-    </div>
-</div>
-);
+    </a>
+  );
 };
 
 const GeekWeekLocal: React.FC = () => {
-  const daily = [
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-  ];
-
-  const week = [
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-    {
-      title: "Hello everyone",
-      content: "This is a content",
-    },
-  ];
-
-  const guild = ["Someone", "Someone else", "Someone again"];
-
-  const hacker = ["Someone", "Someone else", "Someone again"];
-
   return (
-    <div className="bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700 font-bungee tracking-widest pb-12">
+    <div className=" z-20 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700 font-bungee tracking-widest pb-12">
       <Header />
+      <About />
       <DailyChallenges daily={daily} />
-      <WeekChallenges week={week} />
+      <WeekChallenges weekly={weekly} />
       <Ranking guild={guild} hacker={hacker} />
       <Guild />
       <Sponsors />
