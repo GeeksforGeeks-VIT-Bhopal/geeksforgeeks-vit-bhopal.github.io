@@ -104,13 +104,19 @@ const Header = () => {
             <div className="flex flex-col space-y-8">
               <div className="text-4xl lg:text-7xl">GEEK WEEK: Local</div>
               <div className="font-sans tracking-normal font-medium text-base md:text-lg">
-              Embark on a fun-filled journey this week at Geek Week: Local by completing challenges both big and small.
-               This is a golden chance to expand your network, skillset and hacker portfolio, all while earning exciting reward.
+                Embark on a fun-filled journey this week at Geek Week: Local by
+                completing challenges both big and small. This is a golden
+                chance to expand your network, skillset and hacker portfolio,
+                all while earning exciting reward.
               </div>
             </div>
             <div className="flex flex-col items-start lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
-              <a href="https://forms.gle/kcj5HRCxnTPH5TsB8" target="_blank"><AnimatedButton colored>Register</AnimatedButton></a>
-              <a href=""><AnimatedButton>Chat with us</AnimatedButton></a>
+              <a href="https://forms.gle/kcj5HRCxnTPH5TsB8" target="_blank">
+                <AnimatedButton colored>Join a Guild</AnimatedButton>
+              </a>
+              <a href="https://discord.gg/Mb8B9HcyjT" target="_blank">
+                <AnimatedButton>Chat with us</AnimatedButton>
+              </a>
             </div>
           </div>
           <img src={HeaderImage} className="h-32 my-6 lg:h-96"></img>
@@ -174,7 +180,8 @@ const Ranking = ({ guild, hacker }: { guild: string[]; hacker: string[] }) => {
               <div className="flex flex-col space-y-6">
                 <div className="text-xl lg:text-4xl">Ranking</div>
                 <div className="font-sans tracking-normal font-medium text-base lg:text-lg">
-                What better award than reward? You can view the top geekiest 3 of the Individual and Guild Leaderboards below:
+                  What better award than reward? You can view the top geekiest 3
+                  of the Individual and Guild Leaderboards below:
                 </div>
               </div>
               <div className="flex lg:flex-row flex-col space-y-12 lg:space-y-0 lg:space-x-24">
@@ -227,7 +234,12 @@ const Guild = () => {
               </div>
             </div>
             <div className="flex space-x-12">
-              <a href="https://forms.gle/kcj5HRCxnTPH5TsB8" target="_blank"><AnimatedButton colored>Join a guild</AnimatedButton></a>
+              <a href="https://forms.gle/kcj5HRCxnTPH5TsB8" target="_blank">
+                <AnimatedButton colored>Join a guild</AnimatedButton>
+              </a>
+              <a href="https://forms.gle/jnmuUSVq79GPC8XY7" target="_blank">
+                <AnimatedButton>Make a guild</AnimatedButton>
+              </a>
             </div>
           </div>
         </Card>
@@ -245,39 +257,47 @@ const Sponsors = () => {
             <div className="flex flex-col space-y-3 lg:space-y-6">
               <div className="text-2xl lg:text-4xl">Sponsors</div>
               <div className="font-sans tracking-normal font-medium text-lg">
-              Want to know about the main forces backing us, who made all of this possible?
-              Well, these are event sponsors to whom we are ever grateful:
+                Want to know about the main forces backing us, who made all of
+                this possible? Well, these are event sponsors to whom we are
+                ever grateful:
               </div>
             </div>
             <div className="w-full grid grid-cols-1 md:grid-cols:2 lg:grid-cols-3 gap-8">
               {/* <AnimatedButton>Nice Company</AnimatedButton> */}
               <div className="flex flex-wrap flex-col">
-                  <div className="text-xl lg:text-3xl">GeeksForGeeks</div>
-                  <div className="font-sans tracking-normal font-medium text-base md:text-lg">
-                    The portal we are all so familiar with and even more so during our examinations. 
-                    The namesake of this student chapter, it is perhaps India’s largest computer science portal where you can access resources, 
-                    articles and papers on all technical topics under the Sun. It is fondly also known as the ‘Encyclopaedia of Computer Science’ 
-                    and has various students chapters across college campuses in India.
-                  </div>
+                <div className="text-xl lg:text-3xl">GeeksForGeeks</div>
+                <div className="font-sans tracking-normal font-medium text-base md:text-lg">
+                  The portal we are all so familiar with and even more so during
+                  our examinations. The namesake of this student chapter, it is
+                  perhaps India’s largest computer science portal where you can
+                  access resources, articles and papers on all technical topics
+                  under the Sun. It is fondly also known as the ‘Encyclopaedia
+                  of Computer Science’ and has various students chapters across
+                  college campuses in India.
+                </div>
               </div>
 
               <div className="flex flex-wrap flex-col">
-                  <div className="text-xl lg:text-3xl">Repl.it</div>
-                  <div className="font-sans tracking-normal font-medium text-base md:text-lg">
-                  A simple and powerful online IDE, Editor, Compiler, Interpreter and REPL, which can run, 
-                  host and compile in 50+ languages. You don’t have to spend a second in setting up here and it 
-                  even facilitates GitHub integration and real time collaboration!
-                  </div>
+                <div className="text-xl lg:text-3xl">Repl.it</div>
+                <div className="font-sans tracking-normal font-medium text-base md:text-lg">
+                  A simple and powerful online IDE, Editor, Compiler,
+                  Interpreter and REPL, which can run, host and compile in 50+
+                  languages. You don’t have to spend a second in setting up here
+                  and it even facilitates GitHub integration and real time
+                  collaboration!
+                </div>
               </div>
 
               <div className="flex flex-wrap flex-col">
-                  <div className="text-xl lg:text-3xl">InterViewCake</div>
-                  <div className="font-sans tracking-normal font-medium text-base md:text-lg">
-                  Sometimes the name does say it all! And this is especially true for InterviewCake, 
-                  which literally makes programming interviews a cake walk. If you want to gather tips, tricks, secrets or resources 
-                  to ace programming interviews at those tech giants look no further, as you have found the one-step solution, 
-                  i.e InterviewCake
-                  </div>
+                <div className="text-xl lg:text-3xl">InterViewCake</div>
+                <div className="font-sans tracking-normal font-medium text-base md:text-lg">
+                  Sometimes the name does say it all! And this is especially
+                  true for InterviewCake, which literally makes programming
+                  interviews a cake walk. If you want to gather tips, tricks,
+                  secrets or resources to ace programming interviews at those
+                  tech giants look no further, as you have found the one-step
+                  solution, i.e InterviewCake
+                </div>
               </div>
             </div>
           </div>
@@ -297,14 +317,19 @@ const About = () => {
             <div className="flex flex-col space-y-3 lg:space-y-6">
               <div className="text-lg lg:text-4xl">What's Geek Week:Local?</div>
               <div className="font-sans tracking-normal font-medium text-lg">
-              Geek Week: Local is a 7 day event comprising various daily and week long challenges 
-              which one has to solve with their respective guilds/teams. The challenges will vary in 
-              difficulty levels ranging from beginner friendly puzzles to advanced conundrums, so worry not, 
-              there is something for everyone.<br></br>
-              Apart from this, we will have webinars with industry experts to get a peek at how things work in real life, 
-              witty mini events and a special sponsor event as the show stopper wherein the guild members will gather  
-              to bring their hence acquired skills to life by creating projects to tackle real life challenges! 
-              Lo and behold, you will witness magic! And did we mention the the late night hangout and music sessions in between?
+                Geek Week: Local is a 7 day event comprising various daily and
+                week long challenges which one has to solve with their
+                respective guilds/teams. The challenges will vary in difficulty
+                levels ranging from beginner friendly puzzles to advanced
+                conundrums, so worry not, there is something for everyone.
+                <br></br>
+                Apart from this, we will have webinars with industry experts to
+                get a peek at how things work in real life, witty mini events
+                and a special sponsor event as the show stopper wherein the
+                guild members will gather to bring their hence acquired skills
+                to life by creating projects to tackle real life challenges! Lo
+                and behold, you will witness magic! And did we mention the the
+                late night hangout and music sessions in between?
               </div>
             </div>
             <img src={DailyImage} className="hidden lg:block h-32"></img>
@@ -315,9 +340,9 @@ const About = () => {
             <div className="flex flex-col space-y-3 lg:space-y-6">
               <div className="text-lg lg:text-4xl">FAQ</div>
               <div className="font-sans tracking-normal font-medium text-lg">
-              These are some frequently asked questions regarding Geek Week: Local. 
-              We are sure that your queries, if any will find answers here. 
-              If problems still persist, you can always chat with us.
+                These are some frequently asked questions regarding Geek Week:
+                Local. We are sure that your queries, if any will find answers
+                here. If problems still persist, you can always chat with us.
               </div>
             </div>
             <img src={WeekImage} className="hidden lg:block h-32"></img>
@@ -333,9 +358,9 @@ const GeekWeekLocal: React.FC = () => {
     <div className=" z-20 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700 font-bungee tracking-widest pb-12">
       <Header />
       <About />
-      <DailyChallenges daily={daily} />
+      {/* <DailyChallenges daily={daily} />
       <WeekChallenges weekly={weekly} />
-      <Ranking guild={guild} hacker={hacker} />
+      <Ranking guild={guild} hacker={hacker} /> */}
       <Guild />
       <Sponsors />
     </div>

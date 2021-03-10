@@ -56,7 +56,7 @@ const EmailSection = () => {
         Want to attend our upcoming event?
       </div>
       <form
-        className="flex-col flex sm:flex-row items-center space-y-3"
+        className="flex-col flex sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3"
         onSubmit={handleEmail}
       >
         {!isSent && (
