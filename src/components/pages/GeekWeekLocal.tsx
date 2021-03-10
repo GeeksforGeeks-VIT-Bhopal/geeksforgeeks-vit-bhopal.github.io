@@ -78,8 +78,8 @@ const Challenge: React.FC<{
 const Header = () => {
   const options = [
     { name: "About", to: "#about" },
-    { name: "Challenges", to: "#challenges" },
-    { name: "Ranking", to: "#ranking" },
+    // { name: "Challenges", to: "#challenges" },
+    // { name: "Ranking", to: "#ranking" },
     { name: "Guilds", to: "#guilds" },
     { name: "Sponsor", to: "#sponsor" },
   ];
