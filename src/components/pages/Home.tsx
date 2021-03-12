@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import { MdArrowForward, MdDone } from "react-icons/md";
+import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 // Firebase
 import { database } from "../../store";
@@ -7,8 +9,7 @@ import { database } from "../../store";
 // Components
 import Primary from "../buttons/Primary";
 import Secondary from "../buttons/Secondary";
-import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import Navbar from "../Navbar";
 
 const Header = () => {
   return (
@@ -138,9 +139,10 @@ const Footer = () => {
   );
 };
 
-const Home: React.FC = () => {
+const Home: React.FC<{ handleTheme: () => void }> = ({ handleTheme }) => {
   return (
     <>
+      <Navbar handleTheme={handleTheme} />
       <Header />
       <EmailSection />
       <TeamSection />

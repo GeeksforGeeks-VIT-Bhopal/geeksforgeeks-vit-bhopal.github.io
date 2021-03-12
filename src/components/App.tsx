@@ -22,16 +22,15 @@ const App = () => {
     <HashRouter basename={process.env.PUBLIC_URL}>
       <div className={theme}>
         <Layout>
-          <Navbar handleTheme={handleTheme} />
           <Switch>
             <Route exact path="/geekweeklocal">
-              <GeekWeekLocal />
+              <GeekWeekLocal handleTheme={handleTheme} />
             </Route>
             <Route exact path="/team">
-              <Team />
+              <Team handleTheme={handleTheme} />
             </Route>
             <Route exact path="/">
-              <Home />
+              <Home handleTheme={handleTheme} />
             </Route>
             <Redirect to="/" />
           </Switch>

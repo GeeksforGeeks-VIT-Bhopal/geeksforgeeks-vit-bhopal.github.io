@@ -1,10 +1,20 @@
 import { HashLink } from "react-router-hash-link";
 
+// Components
+import Navbar from "../Navbar";
+
 // Images
 import HeaderImage from "../../images/GeekWeekLocal/code.png";
 import DailyImage from "../../images/GeekWeekLocal/hii.png";
 import WeekImage from "../../images/GeekWeekLocal/sleep.png";
 import RankingImage from "../../images/GeekWeekLocal/sit.png";
+
+// Sponsors
+import Sponsor1 from "../../images/sponsors/sponsor (1).png";
+import Sponsor2 from "../../images/sponsors/sponsor (2).png";
+import Sponsor3 from "../../images/sponsors/sponsor (3).png";
+import Sponsor4 from "../../images/sponsors/sponsor (4).png";
+import Sponsor5 from "../../images/sponsors/sponsor (5).png";
 
 // Data
 import daily from "../../data/daily-challenges";
@@ -233,7 +243,7 @@ const Guild = () => {
                 leaderboard.
               </div>
             </div>
-            <div className="flex space-x-12">
+            <div className="flex flex-col items-start lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
               <a href="https://forms.gle/kcj5HRCxnTPH5TsB8" target="_blank">
                 <AnimatedButton colored>Join a guild</AnimatedButton>
               </a>
@@ -248,7 +258,7 @@ const Guild = () => {
   );
 };
 
-const Sponsors = () => {
+const Sponsors = ({ sponsors }: { sponsors: string[] }) => {
   return (
     <a id="sponsor">
       <div className="px-5 mt-12">
@@ -262,43 +272,12 @@ const Sponsors = () => {
                 ever grateful:
               </div>
             </div>
-            <div className="w-full grid grid-cols-1 md:grid-cols:2 lg:grid-cols-3 gap-8">
-              {/* <AnimatedButton>Nice Company</AnimatedButton> */}
-              <div className="flex flex-wrap flex-col">
-                <div className="text-xl lg:text-3xl">GeeksForGeeks</div>
-                <div className="font-sans tracking-normal font-medium text-base md:text-lg">
-                  The portal we are all so familiar with and even more so during
-                  our examinations. The namesake of this student chapter, it is
-                  perhaps India’s largest computer science portal where you can
-                  access resources, articles and papers on all technical topics
-                  under the Sun. It is fondly also known as the ‘Encyclopaedia
-                  of Computer Science’ and has various students chapters across
-                  college campuses in India.
+            <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {sponsors.map((sponsor) => (
+                <div className="p-2 flex justify-center items-center">
+                  <img src={sponsor}></img>
                 </div>
-              </div>
-
-              <div className="flex flex-wrap flex-col">
-                <div className="text-xl lg:text-3xl">Repl.it</div>
-                <div className="font-sans tracking-normal font-medium text-base md:text-lg">
-                  A simple and powerful online IDE, Editor, Compiler,
-                  Interpreter and REPL, which can run, host and compile in 50+
-                  languages. You don’t have to spend a second in setting up here
-                  and it even facilitates GitHub integration and real time
-                  collaboration!
-                </div>
-              </div>
-
-              <div className="flex flex-wrap flex-col">
-                <div className="text-xl lg:text-3xl">InterViewCake</div>
-                <div className="font-sans tracking-normal font-medium text-base md:text-lg">
-                  Sometimes the name does say it all! And this is especially
-                  true for InterviewCake, which literally makes programming
-                  interviews a cake walk. If you want to gather tips, tricks,
-                  secrets or resources to ace programming interviews at those
-                  tech giants look no further, as you have found the one-step
-                  solution, i.e InterviewCake
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </Card>
@@ -317,22 +296,31 @@ const About = () => {
             <div className="flex flex-col space-y-3 lg:space-y-6">
               <div className="text-lg lg:text-4xl">What's Geek Week:Local?</div>
               <div className="font-sans tracking-normal font-medium text-lg">
-                Geek Week: Local is a 7 day event comprising various daily and
-                week long challenges which one has to solve with their
-                respective guilds/teams. The challenges will vary in difficulty
-                levels ranging from beginner friendly puzzles to advanced
-                conundrums, so worry not, there is something for everyone.
-                <br></br>
-                Apart from this, we will have webinars with industry experts to
-                get a peek at how things work in real life, witty mini events
-                and a special sponsor event as the show stopper wherein the
-                guild members will gather to bring their hence acquired skills
-                to life by creating projects to tackle real life challenges! Lo
-                and behold, you will witness magic! And did we mention the the
-                late night hangout and music sessions in between?
+                <p>
+                  Geek Week: Local is a 7 day event comprising various daily and
+                  week long challenges which one has to solve with their
+                  respective guilds/teams. The challenges will vary in
+                  difficulty levels ranging from beginner friendly puzzles to
+                  advanced conundrums, so worry not, there is something for
+                  everyone.
+                </p>
+                <br />
+                <p>
+                  Apart from this, we will have webinars with industry experts
+                  to get a peek at how things work in real life, witty mini
+                  events and a special sponsor event as the show stopper wherein
+                  the guild members will gather to bring their hence acquired
+                  skills to life by creating projects to tackle real life
+                  challenges! Lo and behold, you will witness magic! And did we
+                  mention the the late night hangout and music sessions in
+                  between?
+                </p>
               </div>
             </div>
-            <img src={DailyImage} className="hidden lg:block h-32"></img>
+            <img
+              src={DailyImage}
+              className="hidden lg:block h-60 px-28 self-center"
+            ></img>
           </div>
         </Card>
         <Card>
@@ -340,12 +328,17 @@ const About = () => {
             <div className="flex flex-col space-y-3 lg:space-y-6">
               <div className="text-lg lg:text-4xl">FAQ</div>
               <div className="font-sans tracking-normal font-medium text-lg">
-                These are some frequently asked questions regarding Geek Week:
-                Local. We are sure that your queries, if any will find answers
-                here. If problems still persist, you can always chat with us.
+                <p>
+                  These are some frequently asked questions regarding Geek Week:
+                  Local. We are sure that your queries, if any will find answers
+                  here. If problems still persist, you can always chat with us.
+                </p>
               </div>
             </div>
-            <img src={WeekImage} className="hidden lg:block h-32"></img>
+            <img
+              src={WeekImage}
+              className="hidden lg:block h-60 px-28 self-center"
+            ></img>
           </div>
         </Card>
       </div>
@@ -353,16 +346,22 @@ const About = () => {
   );
 };
 
-const GeekWeekLocal: React.FC = () => {
+const GeekWeekLocal: React.FC<{ handleTheme: () => void }> = ({
+  handleTheme,
+}) => {
+  const sponsors = [Sponsor1, Sponsor2, Sponsor3, Sponsor4, Sponsor5];
   return (
-    <div className=" z-20 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700 font-bungee tracking-widest pb-12">
-      <Header />
-      <About />
-      {/* <DailyChallenges daily={daily} />
-      <WeekChallenges weekly={weekly} />
-      <Ranking guild={guild} hacker={hacker} /> */}
-      <Guild />
-      <Sponsors />
+    <div className="z-20 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700">
+      <Navbar handleTheme={handleTheme} hideThemeChanger />
+      <div className="font-bungee tracking-widest pb-12">
+        <Header />
+        <About />
+        {/* <DailyChallenges daily={daily} />
+        <WeekChallenges weekly={weekly} />
+        <Ranking guild={guild} hacker={hacker} /> */}
+        <Guild />
+        <Sponsors sponsors={sponsors} />
+      </div>
     </div>
   );
 };
