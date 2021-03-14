@@ -77,7 +77,7 @@ const Challenge: React.FC<{
 }> = ({ title, content }) => {
   return (
     <Card className="p-6 lg:p-10 flex flex-col space-y-2 lg:space-y-4 mr-5 mb-5">
-      <div className="text-lg lg:text-2xl">{title}</div>
+      <div className="text-lg">{title}</div>
       <div className="font-sans font-bold tracking-normal text-base lg:text-lg">
         {content}
       </div>
