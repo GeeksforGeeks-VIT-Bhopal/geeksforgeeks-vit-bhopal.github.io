@@ -131,6 +131,16 @@ const Header = () => {
           </div>
           <img src={HeaderImage} className="h-32 my-6 lg:h-96"></img>
         </div>
+        <div className="flex justify-center mb-8">
+          <iframe
+            width="50%"
+            height="420"
+            src="https://www.youtube.com/embed/BKEGZntTUXQ"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
       </Card>
     </header>
   );
@@ -323,24 +333,6 @@ const About = () => {
             ></img>
           </div>
         </Card>
-        <Card>
-          <div className="flex p-6 lg:p-16 space-x-16  max-w-8xl">
-            <div className="flex flex-col space-y-3 lg:space-y-6">
-              <div className="text-lg lg:text-4xl">FAQ</div>
-              <div className="font-sans tracking-normal font-medium text-lg">
-                <p>
-                  These are some frequently asked questions regarding Geek Week:
-                  Local. We are sure that your queries, if any will find answers
-                  here. If problems still persist, you can always chat with us.
-                </p>
-              </div>
-            </div>
-            <img
-              src={WeekImage}
-              className="hidden lg:block h-60 px-28 self-center"
-            ></img>
-          </div>
-        </Card>
       </div>
     </a>
   );
@@ -356,8 +348,8 @@ const GeekWeekLocal: React.FC<{ handleTheme: () => void }> = ({
       <div className="font-bungee tracking-widest pb-12">
         <Header />
         <About />
-        {/* <DailyChallenges daily={daily} />
-        <WeekChallenges weekly={weekly} />
+        <DailyChallenges daily={daily} />
+        {/* <WeekChallenges weekly={weekly} />
         <Ranking guild={guild} hacker={hacker} /> */}
         <Guild />
         <Sponsors sponsors={sponsors} />
