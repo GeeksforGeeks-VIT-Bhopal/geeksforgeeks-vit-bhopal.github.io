@@ -10,11 +10,13 @@ import WeekImage from "../../images/GeekWeekLocal/sleep.png";
 import RankingImage from "../../images/GeekWeekLocal/sit.png";
 
 // Sponsors
+import Sponsor0 from "../../images/sponsors/sponsor (0).png";
 import Sponsor1 from "../../images/sponsors/sponsor (1).png";
 import Sponsor2 from "../../images/sponsors/sponsor (2).png";
 import Sponsor3 from "../../images/sponsors/sponsor (3).png";
 import Sponsor4 from "../../images/sponsors/sponsor (4).png";
 import Sponsor5 from "../../images/sponsors/sponsor (5).png";
+import Sponsor6 from "../../images/sponsors/sponsor (6).png";
 
 // Data
 import daily from "../../data/daily-challenges";
@@ -341,7 +343,7 @@ const About = () => {
 const GeekWeekLocal: React.FC<{ handleTheme: () => void }> = ({
   handleTheme,
 }) => {
-  const sponsors = [Sponsor1, Sponsor2, Sponsor3, Sponsor4, Sponsor5];
+  const sponsors = [Sponsor0, Sponsor1, Sponsor2, Sponsor3, Sponsor4, Sponsor5, Sponsor6];
   const enable = {"daily": true, "weekly": false, "ranking": false};
   return (
     <div className="z-20 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700">
