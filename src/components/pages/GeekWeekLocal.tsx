@@ -342,15 +342,16 @@ const GeekWeekLocal: React.FC<{ handleTheme: () => void }> = ({
   handleTheme,
 }) => {
   const sponsors = [Sponsor1, Sponsor2, Sponsor3, Sponsor4, Sponsor5];
+  const enable = {"daily": true, "weekly": false, "ranking": false};
   return (
     <div className="z-20 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700">
       <Navbar handleTheme={handleTheme} hideThemeChanger />
       <div className="font-bungee tracking-widest pb-12">
         <Header />
         <About />
-        <DailyChallenges daily={daily} />
-        {/* <WeekChallenges weekly={weekly} />
-        <Ranking guild={guild} hacker={hacker} /> */}
+        {enable.daily && <DailyChallenges daily={daily} />}
+        {enable.weekly && <WeekChallenges weekly={weekly} />}
+        {enable.ranking && <Ranking guild={guild} hacker={hacker} />}
         <Guild />
         <Sponsors sponsors={sponsors} />
       </div>
