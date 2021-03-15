@@ -109,7 +109,7 @@ const Header = () => {
     <header className="mt-5 px-5">
       <Card>
         <div className="flex justify-between py-6 px-8 align-center text-black text-lg">
-          <a className="hidden lg:block">GEEK WEEK: LOCAL</a>
+          <a className="hidden lg:block">GEEKSFORGEEKS VIT BHOPAL</a>
           <div className="flex text-sm md:text-base flex-wrap">
             {options.map((option) => (
               <span key={option.name} className="ml-4 lg:mb-4">
