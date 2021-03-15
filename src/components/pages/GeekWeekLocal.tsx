@@ -78,19 +78,24 @@ const TitlePanel: React.FC<{ className?: string }> = ({
 const Challenge: React.FC<{
   title: string;
   content: string;
-  links?: {title: string; link: string;}[]
+  links?: { title: string; link: string }[];
 }> = ({ title, content, links }) => {
   return (
     <Card className="p-6 lg:p-10 flex flex-col space-y-2 lg:space-y-4 mr-5 mb-5 tracking-normal">
       <div className="text-lg">{title}</div>
-      <div className="font-sans font-bold">
-        {content}
-      </div>
-      {links &&
-      <div className="flex flex-col space-y-3">
-        {links.map((link) => <a href={link.link} className="font-sans font-bold text-red-500 hover:underline">{link.title}</a>)}
-      </div>
-}
+      <div className="font-sans font-bold">{content}</div>
+      {links && (
+        <div className="flex flex-col space-y-3">
+          {links.map((link) => (
+            <a
+              href={link.link}
+              className="font-sans font-bold text-red-500 hover:underline"
+            >
+              {link.title}
+            </a>
+          ))}
+        </div>
+      )}
     </Card>
   );
 };
@@ -146,7 +151,7 @@ const Header = () => {
           <iframe
             width="50%"
             height="420"
-            src="https://www.youtube.com/embed/Rs2yqJKX318"
+            src="https://www.youtube.com/embed/G3l_vED3vwI"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -161,13 +166,17 @@ const EventTimeline = () => {
   return (
     <a id="timeline">
       <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
-        <TitlePanel>
-          Event Timeline [14th March - 21st March]
-        </TitlePanel>
+        <TitlePanel>Event Timeline [14th March - 21st March]</TitlePanel>
         <div className="w-full grid grid-cols-1 md:grid-cols:2 lg:grid-cols-3">
-          <Challenge title="Session1" content="1:15PM - 2:45PM [Solving Challenges]"/>
-          <Challenge title="Session2" content="4:25PM - 5:55PM [Mini-Event]"/>
-          <Challenge title="Session3" content="7:30PM onwards [Leaderboard Update]"/>
+          <Challenge
+            title="Session1"
+            content="1:15PM - 2:45PM [Solving Challenges]"
+          />
+          <Challenge title="Session2" content="4:25PM - 5:55PM [Mini-Event]" />
+          <Challenge
+            title="Session3"
+            content="7:30PM onwards [Leaderboard Update]"
+          />
         </div>
       </div>
     </a>
@@ -177,17 +186,19 @@ const EventTimeline = () => {
 const DailyChallenges = ({
   daily,
 }: {
-  daily: { title: string; content: string, links: {title: string; link: string;}[] }[];
+  daily: {
+    title: string;
+    content: string;
+    links: { title: string; link: string }[];
+  }[];
 }) => {
   return (
     <a id="challenges">
       <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
-        <TitlePanel>
-          Daily Challenges
-        </TitlePanel>
+        <TitlePanel>Daily Challenges</TitlePanel>
         <div className="w-full grid grid-cols-1 md:grid-cols:2 lg:grid-cols-3">
           {daily.map(({ content, title, links }) => (
-            <Challenge content={content} title={title} links={links}/>
+            <Challenge content={content} title={title} links={links} />
           ))}
         </div>
       </div>
@@ -198,14 +209,16 @@ const DailyChallenges = ({
 const WeekChallenges = ({
   weekly,
 }: {
-  weekly: { title: string; content: string, links: {title: string; link: string;}[] }[];
+  weekly: {
+    title: string;
+    content: string;
+    links: { title: string; link: string }[];
+  }[];
 }) => {
   return (
     <a>
       <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
-        <TitlePanel>
-          Week Long Challenges
-        </TitlePanel>
+        <TitlePanel>Week Long Challenges</TitlePanel>
         <div className="w-full grid grid-cols-1 lg:grid-cols-2">
           {weekly.map(({ content, title, links }) => (
             <Challenge content={content} title={title} links={links} />
@@ -216,7 +229,13 @@ const WeekChallenges = ({
   );
 };
 
-const Ranking = ({ guild, hacker }: { guild: string[]; hacker: string[] }) => {
+const Ranking = ({
+  guild,
+  hacker,
+}: {
+  guild: string[];
+  hacker: { name: string; username: string; score: number }[];
+}) => {
   return (
     <a id="ranking">
       <div className="px-5 mt-12">
@@ -231,19 +250,29 @@ const Ranking = ({ guild, hacker }: { guild: string[]; hacker: string[] }) => {
                 </div>
               </div>
               <div className="flex lg:flex-row flex-col space-y-12 lg:space-y-0 lg:space-x-24">
-                <div>
-                  <div className="text-xl lg:text-3xl">Guild Ranking</div>
-                  <ul className="ml-2 space-y-4 mt-8 text-base lg:text-2xl">
-                    {guild.map((name, index) => (
-                      <li>{`${index + 1} ${name}`}</li>
-                    ))}
-                  </ul>
-                </div>
+                {guild.length > 0 && (
+                  <div>
+                    <div className="text-xl lg:text-3xl">Guild Ranking</div>
+                    <ul className="ml-2 space-y-4 mt-8 text-base lg:text-2xl">
+                      {guild.map((name, index) => (
+                        <li>
+                          <div>{name}</div>
+                          <div></div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 <div>
                   <div className="text-xl lg:text-3xl">Hacker Ranking</div>
-                  <ul className=" ml-2 space-y-4 mt-8 text-base lg:text-2xl">
-                    {hacker.map((name, index) => (
-                      <li>{`${index + 1} ${name}`}</li>
+                  <ul className=" ml-2 space-y-4 mt-8">
+                    {hacker.map(({ name, username, score }) => (
+                      <li>
+                        <div className="text-base lg:text-2xl">{`${name} - ${score}`}</div>
+                        <div className="text-sm lg:text-base text-gray-600">
+                          {username}
+                        </div>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -262,22 +291,22 @@ const Guild = () => {
     <a id="guild">
       <div className="px-5 mt-12">
         <Card>
-        <div className="flex p-6 lg:p-16 space-x-16 max-w-8xl">
+          <div className="flex p-6 lg:p-16 space-x-16 max-w-8xl">
             <div className="flex flex-col space-y-3 lg:space-y-6">
               <div className="text-lg lg:text-4xl">Guild</div>
               <div className="font-sans tracking-normal font-medium text-lg">
                 <p>
-                One of the best parts of our community is that it allows people
-                to meet and make connections with others, regardless of where
-                you live. Form a guild of hackers and fight for a spot on the
-                leaderboard. Every time you complete a challenge during the week
-                of Geek Week: Local, you’ll earn points for your Guild. There’s
-                strength in numbers so it’s important to spread the word and we
-                are here to help by providing you with pre-made marketing
-                templates. Use these to share the excitement with your club,
-                friends, and local hackers! The more members you have, the more
-                points you’ll get and the faster you’ll climb your way up the
-                leaderboard.
+                  One of the best parts of our community is that it allows
+                  people to meet and make connections with others, regardless of
+                  where you live. Form a guild of hackers and fight for a spot
+                  on the leaderboard. Every time you complete a challenge during
+                  the week of Geek Week: Local, you’ll earn points for your
+                  Guild. There’s strength in numbers so it’s important to spread
+                  the word and we are here to help by providing you with
+                  pre-made marketing templates. Use these to share the
+                  excitement with your club, friends, and local hackers! The
+                  more members you have, the more points you’ll get and the
+                  faster you’ll climb your way up the leaderboard.
                 </p>
               </div>
               <div className="flex flex-col items-start lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8 pt-8">
@@ -369,8 +398,18 @@ const About = () => {
 const GeekWeekLocal: React.FC<{ handleTheme: () => void }> = ({
   handleTheme,
 }) => {
-  const sponsors = [Sponsor0, Sponsor1, Sponsor2, Sponsor3, Sponsor4, Sponsor5, Sponsor6, Sponsor7, Sponsor8];
-  const enable = {"daily": true, "weekly": false, "ranking": false};
+  const sponsors = [
+    Sponsor0,
+    Sponsor1,
+    Sponsor2,
+    Sponsor3,
+    Sponsor4,
+    Sponsor5,
+    Sponsor6,
+    Sponsor7,
+    Sponsor8,
+  ];
+  const enable = { daily: true, weekly: false, ranking: true };
   return (
     <div className="z-20 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700">
       <Navbar handleTheme={handleTheme} hideThemeChanger wide />
