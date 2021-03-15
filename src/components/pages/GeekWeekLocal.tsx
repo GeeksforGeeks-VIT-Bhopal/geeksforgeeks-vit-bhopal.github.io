@@ -78,7 +78,7 @@ const TitlePanel: React.FC<{ className?: string }> = ({
 const Challenge: React.FC<{
   title: string;
   content: string;
-  links: {title: string; link: string;}[]
+  links?: {title: string; link: string;}[]
 }> = ({ title, content, links }) => {
   return (
     <Card className="p-6 lg:p-10 flex flex-col space-y-2 lg:space-y-4 mr-5 mb-5 tracking-normal">
@@ -86,9 +86,11 @@ const Challenge: React.FC<{
       <div className="font-sans font-bold">
         {content}
       </div>
+      {links &&
       <div className="flex flex-col space-y-3">
         {links.map((link) => <a href={link.link} className="font-sans font-bold text-red-500 hover:underline">{link.title}</a>)}
       </div>
+}
     </Card>
   );
 };
@@ -97,6 +99,7 @@ const Header = () => {
   const options = [
     { name: "About", to: "#about" },
     { name: "Challenges", to: "#challenges" },
+    { name: "Timeline", to: "#timeline" },
     // { name: "Ranking", to: "#ranking" },
     { name: "Guild", to: "#guild" },
     { name: "Sponsors", to: "#sponsors" },
@@ -151,6 +154,23 @@ const Header = () => {
         </div>
       </Card>
     </header>
+  );
+};
+
+const EventTimeline = () => {
+  return (
+    <a id="timeline">
+      <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
+        <TitlePanel>
+          Event Timeline [14th March - 21st March]
+        </TitlePanel>
+        <div className="w-full grid grid-cols-1 md:grid-cols:2 lg:grid-cols-3">
+          <Challenge title="Session1" content="1:15PM - 2:45PM [Solving Challenges]"/>
+          <Challenge title="Session2" content="4:25PM - 5:55PM [Mini-Event]"/>
+          <Challenge title="Session3" content="7:30PM onwards [Leaderboard Update]"/>
+        </div>
+      </div>
+    </a>
   );
 };
 
@@ -357,6 +377,7 @@ const GeekWeekLocal: React.FC<{ handleTheme: () => void }> = ({
       <div className="font-bungee tracking-widest pb-12">
         <Header />
         <About />
+        <EventTimeline />
         {enable.daily && <DailyChallenges daily={daily} />}
         {enable.weekly && <WeekChallenges weekly={weekly} />}
         {enable.ranking && <Ranking guild={guild} hacker={hacker} />}
