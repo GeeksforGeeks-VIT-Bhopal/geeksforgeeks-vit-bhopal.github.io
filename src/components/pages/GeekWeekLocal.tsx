@@ -78,12 +78,16 @@ const TitlePanel: React.FC<{ className?: string }> = ({
 const Challenge: React.FC<{
   title: string;
   content: string;
-}> = ({ title, content }) => {
+  links: {title: string; link: string;}[]
+}> = ({ title, content, links }) => {
   return (
-    <Card className="p-6 lg:p-10 flex flex-col space-y-2 lg:space-y-4 mr-5 mb-5">
+    <Card className="p-6 lg:p-10 flex flex-col space-y-2 lg:space-y-4 mr-5 mb-5 tracking-normal">
       <div className="text-lg">{title}</div>
-      <div className="font-sans font-bold tracking-normal text-base lg:text-lg">
+      <div className="font-sans font-bold">
         {content}
+      </div>
+      <div className="flex flex-col space-y-3">
+        {links.map((link) => <a href={link.link} className="font-sans font-bold text-red-500 hover:underline">{link.title}</a>)}
       </div>
     </Card>
   );
@@ -92,10 +96,10 @@ const Challenge: React.FC<{
 const Header = () => {
   const options = [
     { name: "About", to: "#about" },
-    // { name: "Challenges", to: "#challenges" },
+    { name: "Challenges", to: "#challenges" },
     // { name: "Ranking", to: "#ranking" },
-    { name: "Guilds", to: "#guilds" },
-    { name: "Sponsor", to: "#sponsor" },
+    { name: "Guild", to: "#guild" },
+    { name: "Sponsors", to: "#sponsors" },
   ];
 
   return (
@@ -153,18 +157,17 @@ const Header = () => {
 const DailyChallenges = ({
   daily,
 }: {
-  daily: { title: string; content: string }[];
+  daily: { title: string; content: string, links: {title: string; link: string;}[] }[];
 }) => {
   return (
-    <a id="ranking">
+    <a id="challenges">
       <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
         <TitlePanel>
-          <img src={DailyImage} className="mr-8 h-20" />
           Daily Challenges
         </TitlePanel>
         <div className="w-full grid grid-cols-1 md:grid-cols:2 lg:grid-cols-3">
-          {daily.map(({ content, title }) => (
-            <Challenge content={content} title={title} />
+          {daily.map(({ content, title, links }) => (
+            <Challenge content={content} title={title} links={links}/>
           ))}
         </div>
       </div>
@@ -175,18 +178,17 @@ const DailyChallenges = ({
 const WeekChallenges = ({
   weekly,
 }: {
-  weekly: { title: string; content: string }[];
+  weekly: { title: string; content: string, links: {title: string; link: string;}[] }[];
 }) => {
   return (
-    <a id="ranking">
+    <a>
       <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
         <TitlePanel>
-          <img src={WeekImage} className="mr-8 h-20" />
           Week Long Challenges
         </TitlePanel>
         <div className="w-full grid grid-cols-1 lg:grid-cols-2">
-          {weekly.map(({ content, title }) => (
-            <Challenge content={content} title={title} />
+          {weekly.map(({ content, title, links }) => (
+            <Challenge content={content} title={title} links={links} />
           ))}
         </div>
       </div>
@@ -240,10 +242,11 @@ const Guild = () => {
     <a id="guild">
       <div className="px-5 mt-12">
         <Card>
-          <div className="flex flex-col p-6 lg:p-24 space-y-6 lg:space-y-14">
+        <div className="flex p-6 lg:p-16 space-x-16 max-w-8xl">
             <div className="flex flex-col space-y-3 lg:space-y-6">
-              <div className="text-xl lg:text-4xl">Guild</div>
-              <div className="font-sans tracking-normal font-medium text-base lg:text-lg">
+              <div className="text-lg lg:text-4xl">Guild</div>
+              <div className="font-sans tracking-normal font-medium text-lg">
+                <p>
                 One of the best parts of our community is that it allows people
                 to meet and make connections with others, regardless of where
                 you live. Form a guild of hackers and fight for a spot on the
@@ -255,16 +258,18 @@ const Guild = () => {
                 friends, and local hackers! The more members you have, the more
                 points you’ll get and the faster you’ll climb your way up the
                 leaderboard.
+                </p>
+              </div>
+              <div className="flex flex-col items-start lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8 pt-8">
+                <a href="https://forms.gle/kcj5HRCxnTPH5TsB8" target="_blank">
+                  <AnimatedButton colored>Join a guild</AnimatedButton>
+                </a>
               </div>
             </div>
-            <div className="flex flex-col items-start lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
-              <a href="https://forms.gle/kcj5HRCxnTPH5TsB8" target="_blank">
-                <AnimatedButton colored>Join a guild</AnimatedButton>
-              </a>
-              <a href="https://forms.gle/jnmuUSVq79GPC8XY7" target="_blank">
-                <AnimatedButton>Make a guild</AnimatedButton>
-              </a>
-            </div>
+            <img
+              src={WeekImage}
+              className="hidden lg:block h-60 px-28 self-center"
+            ></img>
           </div>
         </Card>
       </div>
@@ -274,7 +279,7 @@ const Guild = () => {
 
 const Sponsors = ({ sponsors }: { sponsors: string[] }) => {
   return (
-    <a id="sponsor">
+    <a id="sponsors">
       <div className="px-5 mt-12">
         <Card>
           <div className="flex flex-col p-6 lg:p-24 space-y-6 lg:space-y-14">
@@ -286,10 +291,10 @@ const Sponsors = ({ sponsors }: { sponsors: string[] }) => {
                 ever grateful:
               </div>
             </div>
-            <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-24">
               {sponsors.map((sponsor) => (
-                <div className="p-2 flex justify-center items-center">
-                  <img src={sponsor}></img>
+                <div className="flex justify-center items-center">
+                  <img src={sponsor} className="w-52"></img>
                 </div>
               ))}
             </div>
@@ -304,7 +309,6 @@ const About = () => {
   return (
     <a id="about">
       <div className="flex flex-col items-start px-5 mt-12 space-y-5">
-        <TitlePanel>About</TitlePanel>
         <Card>
           <div className="flex p-6 lg:p-16 space-x-16 max-w-8xl">
             <div className="flex flex-col space-y-3 lg:space-y-6">
@@ -349,7 +353,7 @@ const GeekWeekLocal: React.FC<{ handleTheme: () => void }> = ({
   const enable = {"daily": true, "weekly": false, "ranking": false};
   return (
     <div className="z-20 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700">
-      <Navbar handleTheme={handleTheme} hideThemeChanger />
+      <Navbar handleTheme={handleTheme} hideThemeChanger wide />
       <div className="font-bungee tracking-widest pb-12">
         <Header />
         <About />

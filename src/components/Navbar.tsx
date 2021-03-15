@@ -10,15 +10,17 @@ import Logo from "../images/logo.png";
 interface NavbarProps {
   handleTheme: Function;
   hideThemeChanger?: boolean;
+  wide?: boolean;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
   handleTheme,
+  wide = false,
   hideThemeChanger = false,
 }) => {
   return (
     <nav className="flex justify-center items-center">
-      <div className="flex justify-between md:max-w-5xl w-full px-3 py-3 md:px-4 md:py-6 xl:px-0">
+      <div className={`flex justify-between ${wide ? 'md:max-w-8xl' : 'md:max-w-5xl'} w-full px-3 py-3 md:px-4 md:py-6 ${wide ? 'xl:px-5' : 'xl:px-0'}`}>
         <Link to="/">
           <div className="hidden md:flex items-center h-12">
             <img src={Logo} className="h-8 cursor-pointer" />
