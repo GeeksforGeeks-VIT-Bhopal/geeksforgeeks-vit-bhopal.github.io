@@ -233,7 +233,7 @@ const Ranking = ({
   guild,
   hacker,
 }: {
-  guild: string[];
+  guild: { name: string; score: number }[];
   hacker: { name: string; username: string; score: number }[];
 }) => {
   return (
@@ -254,10 +254,9 @@ const Ranking = ({
                   <div>
                     <div className="text-xl lg:text-3xl">Guild Ranking</div>
                     <ul className="ml-2 space-y-4 mt-8 text-base lg:text-2xl">
-                      {guild.map((name, index) => (
+                      {guild.map(({ name, score }) => (
                         <li>
-                          <div>{name}</div>
-                          <div></div>
+                          <div className="text-base lg:text-2xl">{`${name} - ${score}`}</div>
                         </li>
                       ))}
                     </ul>
