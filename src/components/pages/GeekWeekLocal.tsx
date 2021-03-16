@@ -151,7 +151,7 @@ const Header = () => {
           <iframe
             width="50%"
             height="420"
-            src="https://www.youtube.com/embed/G3l_vED3vwI"
+            src="https://www.youtube.com/embed/zkZ6kYy1AEw"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -254,11 +254,13 @@ const Ranking = ({
                   <div>
                     <div className="text-xl lg:text-3xl">Guild Ranking</div>
                     <ul className="ml-2 space-y-4 mt-8 text-base lg:text-2xl">
-                      {guild.map(({ name, score }) => (
-                        <li>
-                          <div className="text-base lg:text-2xl">{`${name} - ${score}`}</div>
-                        </li>
-                      ))}
+                      {guild
+                        .sort((a, b) => b.score - a.score)
+                        .map(({ name, score }) => (
+                          <li>
+                            <div className="text-base lg:text-2xl">{`${name} - ${score}`}</div>
+                          </li>
+                        ))}
                     </ul>
                   </div>
                 )}
@@ -408,7 +410,7 @@ const GeekWeekLocal: React.FC<{ handleTheme: () => void }> = ({
     Sponsor7,
     Sponsor8,
   ];
-  const enable = { daily: true, weekly: false, ranking: true };
+  const enable = { daily: true, weekly: true, ranking: true };
   return (
     <div className="z-20 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700">
       <Navbar handleTheme={handleTheme} hideThemeChanger wide />
