@@ -267,14 +267,16 @@ const Ranking = ({
                 <div>
                   <div className="text-xl lg:text-3xl">Hacker Ranking</div>
                   <ul className=" ml-2 space-y-4 mt-8">
-                    {hacker.map(({ name, username, score }) => (
-                      <li>
-                        <div className="text-base lg:text-2xl">{`${name} - ${score}`}</div>
-                        <div className="text-sm lg:text-base text-gray-600">
-                          {username}
-                        </div>
-                      </li>
-                    ))}
+                    {hacker
+                      .sort((a, b) => b.score - a.score)
+                      .map(({ name, username, score }) => (
+                        <li>
+                          <div className="text-base lg:text-2xl">{`${name} - ${score}`}</div>
+                          <div className="text-sm lg:text-base text-gray-600">
+                            {username}
+                          </div>
+                        </li>
+                      ))}
                   </ul>
                 </div>
               </div>
