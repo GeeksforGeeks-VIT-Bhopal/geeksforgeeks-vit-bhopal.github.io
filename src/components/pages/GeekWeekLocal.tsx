@@ -151,7 +151,7 @@ const Header = () => {
           <iframe
             width="50%"
             height="420"
-            src="https://www.youtube.com/embed/zkZ6kYy1AEw"
+            src="https://www.youtube.com/embed/22gDCcQO7sc"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -175,7 +175,7 @@ const EventTimeline = () => {
           <Challenge title="Session2" content="4:25PM - 5:55PM [Mini-Event]" />
           <Challenge
             title="Session3"
-            content="7:30PM onwards [Leaderboard Update]"
+            content="9:00PM onwards [Leaderboard Update]"
           />
         </div>
       </div>
@@ -249,31 +249,41 @@ const Ranking = ({
                   of the Individual and Guild Leaderboards below:
                 </div>
               </div>
-              <div className="flex lg:flex-row flex-col space-y-12 lg:space-y-0 lg:space-x-24">
-                {guild.length > 0 && (
-                  <div>
-                    <div className="text-xl lg:text-3xl">Guild Ranking</div>
-                    <ul className="ml-2 space-y-4 mt-8 text-base lg:text-2xl">
-                      {guild
-                        .sort((a, b) => b.score - a.score)
-                        .map(({ name, score }) => (
-                          <li>
-                            <div className="text-base lg:text-2xl">{`${name} - ${score}`}</div>
-                          </li>
-                        ))}
-                    </ul>
+              <div className="flex lg:flex-row flex-col space-y-12 lg:space-y-0 lg:space-x-2">
+                <div>
+                  <div className="text-xl lg:text-3xl">Guild Ranking</div>
+                  <div className="text-base lg:text-xl text-gray-700">
+                    DAY1 - DAY3
                   </div>
-                )}
+                  <ul className="space-y-4 mt-8 text-base lg:text-2xl">
+                    {guild
+                      .sort((a, b) => b.score - a.score)
+                      .map(({ name, score }) => (
+                        <li className="flex">
+                          <div className="flex-1 mr-6">
+                            <div className="text-base lg:text-2xl">{name}</div>
+                          </div>
+                          <div className="w-40 text-base lg:text-2xl">
+                            {score}
+                          </div>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
                 <div>
                   <div className="text-xl lg:text-3xl">Hacker Ranking</div>
-                  <ul className=" ml-2 space-y-4 mt-8">
+                  <div className="text-base lg:text-xl text-gray-700">DAY3</div>
+                  <ul className="space-y-4 mt-8">
                     {hacker
                       .sort((a, b) => b.score - a.score)
                       .map(({ name, username, score }) => (
-                        <li>
-                          <div className="text-base lg:text-2xl">{`${name} - ${score}`}</div>
-                          <div className="text-sm lg:text-base text-gray-600">
-                            {username}
+                        <li className="flex">
+                          <div className="flex-1 mr-6">
+                            <div className="text-base lg:text-2xl">{name}</div>
+                            <div className="text-gray-600">{username}</div>
+                          </div>
+                          <div className="w-40 text-base lg:text-2xl">
+                            {score}
                           </div>
                         </li>
                       ))}
@@ -281,7 +291,6 @@ const Ranking = ({
                 </div>
               </div>
             </div>
-            <img src={RankingImage} className="hidden lg:block h-72" />
           </div>
         </Card>
       </div>
