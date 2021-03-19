@@ -195,7 +195,7 @@ const DailyChallenges = ({
   return (
     <a id="challenges">
       <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
-        <TitlePanel>Daily Challenges</TitlePanel>
+        <TitlePanel>Weekend Challenges</TitlePanel>
         <div className="w-full grid grid-cols-1 md:grid-cols:2 lg:grid-cols-3">
           {daily.map(({ content, title, links }) => (
             <Challenge content={content} title={title} links={links} />
