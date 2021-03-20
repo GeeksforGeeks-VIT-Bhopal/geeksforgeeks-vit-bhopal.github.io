@@ -1,0 +1,1 @@
+im fiza sameer and im a mallu. from branch gaming tech. my pronouns are she/her.  as far as this event is concerned im only a beginner in coding but i hope we can learn together in this event. im into photography and i tweet a lot . i also have blue hair.
