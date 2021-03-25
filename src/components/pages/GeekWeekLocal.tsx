@@ -19,6 +19,7 @@ import Sponsor5 from "../../images/sponsors/sponsor (5).png";
 import Sponsor6 from "../../images/sponsors/sponsor (6).png";
 import Sponsor7 from "../../images/sponsors/sponsor (7).png";
 import Sponsor8 from "../../images/sponsors/sponsor (8).png";
+import Sponsor9 from "../../images/sponsors/sponsor (9).png";
 
 // Data
 import daily from "../../data/daily-challenges";
@@ -253,7 +254,7 @@ const Ranking = ({
                 <div>
                   <div className="text-xl lg:text-3xl">Guild Ranking</div>
                   <div className="text-base lg:text-xl text-gray-700">
-                    DAY1 - DAY3
+                    DAY1 - DAY5
                   </div>
                   <ul className="space-y-4 mt-8 text-base lg:text-2xl">
                     {guild
@@ -420,6 +421,7 @@ const GeekWeekLocal: React.FC<{ handleTheme: () => void }> = ({
     Sponsor6,
     Sponsor7,
     Sponsor8,
+    Sponsor9
   ];
   const enable = { daily: true, weekly: true, ranking: true };
   return (
