@@ -1,6 +1,13 @@
 import { useRef, useState } from "react";
 import { MdArrowForward, MdDone } from "react-icons/md";
-import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaDiscord,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 // Firebase
@@ -132,6 +139,21 @@ const Footer = () => {
           <Secondary>
             <FaLinkedin fontSize={20} />
             <span className="hidden sm:block">Linkedin</span>
+          </Secondary>
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UC0VOLCyCjUVeQRoNfc0t_jg"
+          target="_blank"
+        >
+          <Secondary>
+            <FaYoutube fontSize={20} />
+            <span className="hidden sm:block">YouTube</span>
+          </Secondary>
+        </a>
+        <a href="https://twitter.com/gfgscvitbhopal" target="_blank">
+          <Secondary>
+            <FaTwitter fontSize={20} />
+            <span className="hidden sm:block">Twitter</span>
           </Secondary>
         </a>
       </div>

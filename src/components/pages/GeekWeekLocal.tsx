@@ -104,10 +104,7 @@ const Challenge: React.FC<{
 const Header = () => {
   const options = [
     { name: "About", to: "#about" },
-    { name: "Challenges", to: "#challenges" },
-    { name: "Timeline", to: "#timeline" },
-    // { name: "Ranking", to: "#ranking" },
-    { name: "Guild", to: "#guild" },
+    { name: "Ranking", to: "#ranking" },
     { name: "Sponsors", to: "#sponsors" },
   ];
 
@@ -138,8 +135,11 @@ const Header = () => {
               </div>
             </div>
             <div className="flex flex-col items-start lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
-              <a href="https://forms.gle/kcj5HRCxnTPH5TsB8" target="_blank">
-                <AnimatedButton colored>Join a Guild</AnimatedButton>
+              <a
+                href="https://www.youtube.com/channel/UC0VOLCyCjUVeQRoNfc0t_jg"
+                target="_blank"
+              >
+                <AnimatedButton colored>Watch Videos</AnimatedButton>
               </a>
               <a href="https://discord.gg/Mb8B9HcyjT" target="_blank">
                 <AnimatedButton>Chat with us</AnimatedButton>
@@ -152,7 +152,7 @@ const Header = () => {
           <iframe
             width="50%"
             height="420"
-            src="https://www.youtube.com/embed/22gDCcQO7sc"
+            src="https://www.youtube.com/embed/BKEGZntTUXQ"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -246,16 +246,13 @@ const Ranking = ({
               <div className="flex flex-col space-y-6">
                 <div className="text-xl lg:text-4xl">Ranking</div>
                 <div className="font-sans tracking-normal font-medium text-base lg:text-lg">
-                  What better award than reward? You can view the top geekiest 3
-                  of the Individual and Guild Leaderboards below:
+                  What better award than reward? You can view the top geekiest
+                  10 of the Individual and Guild Leaderboards below:
                 </div>
               </div>
               <div className="flex lg:flex-row flex-col space-y-12 lg:space-y-0 lg:space-x-2">
                 <div>
                   <div className="text-xl lg:text-3xl">Guild Ranking</div>
-                  <div className="text-base lg:text-xl text-gray-700">
-                    DAY1 - DAY5
-                  </div>
                   <ul className="space-y-4 mt-8 text-base lg:text-2xl">
                     {guild
                       .sort((a, b) => b.score - a.score)
@@ -273,7 +270,6 @@ const Ranking = ({
                 </div>
                 <div>
                   <div className="text-xl lg:text-3xl">Hacker Ranking</div>
-                  <div className="text-base lg:text-xl text-gray-700">DAY3</div>
                   <ul className="space-y-4 mt-8">
                     {hacker
                       .sort((a, b) => b.score - a.score)
@@ -421,20 +417,15 @@ const GeekWeekLocal: React.FC<{ handleTheme: () => void }> = ({
     Sponsor6,
     Sponsor7,
     Sponsor8,
-    Sponsor9
+    Sponsor9,
   ];
-  const enable = { daily: true, weekly: true, ranking: true };
   return (
     <div className="z-20 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-700">
       <Navbar handleTheme={handleTheme} hideThemeChanger wide />
       <div className="font-bungee tracking-widest pb-12">
         <Header />
         <About />
-        <EventTimeline />
-        {enable.daily && <DailyChallenges daily={daily} />}
-        {enable.weekly && <WeekChallenges weekly={weekly} />}
-        {enable.ranking && <Ranking guild={guild} hacker={hacker} />}
-        <Guild />
+        <Ranking guild={guild} hacker={hacker} />
         <Sponsors sponsors={sponsors} />
       </div>
     </div>

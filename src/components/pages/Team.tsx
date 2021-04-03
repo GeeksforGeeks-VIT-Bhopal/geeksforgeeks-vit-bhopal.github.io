@@ -16,7 +16,7 @@ const Header = () => {
 const Main = () => {
   return (
     <div className="flex justify-center py-8 mb-48">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-2">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 px-2">
         {team.map(({ name, position, image, links }) => (
           <div className="px-3 py-8 bg-white dark:bg-secondary rounded-md border dark:border-transparent shadow-sm hover:shadow flex flex-col items-center gap-5">
             <img src={image} className="w-24 h-24 rounded-full" />

@@ -30,6 +30,15 @@ const team: Member[] = [
     },
   },
   {
+    name: "Ankit",
+    image: "",
+    position: "Secretary",
+    links: {
+      instagram: "",
+      linkedin: "",
+    },
+  },
+  {
     name: "Kritika Shah",
     image:
       "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/kritika.jpeg",
@@ -50,26 +59,6 @@ const team: Member[] = [
     },
   },
   {
-    name: "Laavart",
-    image:
-      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/laavart.jpg",
-    position: "Design & Branding Head",
-    links: {
-      instagram: "https://www.instagram.com/jaadu_s_ra_s_al_ghul/",
-      linkedin: "https://www.linkedin.com/in/laavart-laavart-b54835169/",
-    },
-  },
-  {
-    name: "Abhay Singh Rana",
-    image:
-      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/abhay.jpg",
-    position: "Design & Branding Co-head",
-    links: {
-      instagram: "https://www.instagram.com/iiabhayii/",
-      linkedin: "https://www.linkedin.com/in/abhay-singh-rana-aa2185202/",
-    },
-  },
-  {
     name: "Aishwar Govil",
     image:
       "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/aishwar.jpg",
@@ -87,6 +76,26 @@ const team: Member[] = [
     links: {
       instagram: "https://instagram.com/mohahajit?igshid=1h0yswildi10r",
       linkedin: "http://linkedin.com/in/mohajit-paul-89434a201",
+    },
+  },
+  {
+    name: "Khushi Guptaa",
+    image:
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/khushi.jpg",
+    position: "Marketing Head",
+    links: {
+      instagram: "https://www.instagram.com/_khushii21/",
+      linkedin: "https://www.linkedin.com/in/khushii-guptaa-a13853192/",
+    },
+  },
+  {
+    name: "Ansh Raizada",
+    image:
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/ansh.jpg",
+    position: "Marketing Co-head",
+    links: {
+      instagram: "https://www.instagram.com/ansh_82881/",
+      linkedin: "https://www.linkedin.com/in/ansh-raizada-41046113a/",
     },
   },
   {
@@ -127,23 +136,41 @@ const team: Member[] = [
     },
   },
   {
-    name: "Khushi Guptaa",
+    name: "Laavart",
     image:
-      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/khushi.jpg",
-    position: "Marketing Head",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/laavart.jpg",
+    position: "Design & Branding Head",
     links: {
-      instagram: "https://www.instagram.com/_khushii21/",
-      linkedin: "https://www.linkedin.com/in/khushii-guptaa-a13853192/",
+      instagram: "https://www.instagram.com/jaadu_s_ra_s_al_ghul/",
+      linkedin: "https://www.linkedin.com/in/laavart-laavart-b54835169/",
     },
   },
   {
-    name: "Ansh Raizada",
+    name: "Abhay Singh Rana",
     image:
-      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/ansh.jpg",
-    position: "Marketing Co-head",
+      "https://raw.githubusercontent.com/GeeksforGeeks-VIT-Bhopal/geeksforgeeks-vit-bhopal.github.io/main/src/images/team/abhay.jpg",
+    position: "Design & Branding Co-head",
     links: {
-      instagram: "https://www.instagram.com/ansh_82881/",
-      linkedin: "https://www.linkedin.com/in/ansh-raizada-41046113a/",
+      instagram: "https://www.instagram.com/iiabhayii/",
+      linkedin: "https://www.linkedin.com/in/abhay-singh-rana-aa2185202/",
+    },
+  },
+  {
+    name: "Aryan",
+    image: "",
+    position: "Content Head",
+    links: {
+      instagram: "",
+      linkedin: "",
+    },
+  },
+  {
+    name: "Sumedha",
+    image: "",
+    position: "Content Co-head",
+    links: {
+      instagram: "",
+      linkedin: "",
     },
   },
 ];
