@@ -16,7 +16,11 @@ import { database } from "../../store";
 // Components
 import Primary from "../buttons/Primary";
 import Secondary from "../buttons/Secondary";
+import Custom from "../buttons/Custom";
 import Navbar from "../Navbar";
+
+// Image
+import BG from "../../images/bg.jpg";
 
 const Header = () => {
   return (
@@ -102,6 +106,21 @@ const TeamSection = () => {
   );
 };
 
+const HackTheTerminal = () => {
+  return (
+    <div>
+      <div className="relative overflow-hidden h-96 w-full">
+        <img src={BG} className="absolute w-full h-full z-0"></img>
+        <div className="absolute w-full h-full z-10 bg-black opacity-70"></div>
+        <div className="absolute z-20 w-full h-full flex flex-col items-center justify-center">
+          <div className="text-white text-5xl font-bold mb-12">Hack the Terminal</div>
+          <Custom className="bg-white text-black px-5 py-3"><a href="https://hack-the-terminal.web.app/">Join</a></Custom>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const Footer = () => {
   return (
     <footer className="flex flex-col space-y-5 sm:items-center py-32 px-8 md:px-0 bg-background-primary-light dark:bg-background-primary-dark">
@@ -166,6 +185,7 @@ const Home: React.FC<{ handleTheme: () => void }> = ({ handleTheme }) => {
     <>
       <Navbar handleTheme={handleTheme} />
       <Header />
+      <HackTheTerminal />
       <EmailSection />
       <TeamSection />
       <Footer />
