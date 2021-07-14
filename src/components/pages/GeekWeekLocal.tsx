@@ -6,8 +6,8 @@ import Navbar from "../Navbar";
 // Images
 import HeaderImage from "../../images/GeekWeekLocal/code.png";
 import DailyImage from "../../images/GeekWeekLocal/hii.png";
-import WeekImage from "../../images/GeekWeekLocal/sleep.png";
-import RankingImage from "../../images/GeekWeekLocal/sit.png";
+// import WeekImage from "../../images/GeekWeekLocal/sleep.png";
+// import RankingImage from "../../images/GeekWeekLocal/sit.png";
 
 // Sponsors
 import Sponsor0 from "../../images/sponsors/sponsor (0).png";
@@ -60,43 +60,43 @@ const AnimatedButton: React.FC<{ colored?: boolean }> = ({
   );
 };
 
-const TitlePanel: React.FC<{ className?: string }> = ({
-  children,
-  className,
-}) => {
-  return (
-    <div
-      className={`px-6 py-3 lg:px-12 lg:py-6 flex justify-center items-center text-xl lg:text-4xl bg-white rounded shadow ${className}`}
-    >
-      {children}
-    </div>
-  );
-};
+// const TitlePanel: React.FC<{ className?: string }> = ({
+//   children,
+//   className,
+// }) => {
+//   return (
+//     <div
+//       className={`px-6 py-3 lg:px-12 lg:py-6 flex justify-center items-center text-xl lg:text-4xl bg-white rounded shadow ${className}`}
+//     >
+//       {children}
+//     </div>
+//   );
+// };
 
-const Challenge: React.FC<{
-  title: string;
-  content: string;
-  links?: { title: string; link: string }[];
-}> = ({ title, content, links }) => {
-  return (
-    <Card className="p-6 lg:p-10 flex flex-col space-y-2 lg:space-y-4 mr-5 mb-5 tracking-normal">
-      <div className="text-lg">{title}</div>
-      <div className="font-sans font-bold">{content}</div>
-      {links && (
-        <div className="flex flex-col space-y-3">
-          {links.map((link) => (
-            <a
-              href={link.link}
-              className="font-sans font-bold text-red-500 hover:underline"
-            >
-              {link.title}
-            </a>
-          ))}
-        </div>
-      )}
-    </Card>
-  );
-};
+// const Challenge: React.FC<{
+//   title: string;
+//   content: string;
+//   links?: { title: string; link: string }[];
+// }> = ({ title, content, links }) => {
+//   return (
+//     <Card className="p-6 lg:p-10 flex flex-col space-y-2 lg:space-y-4 mr-5 mb-5 tracking-normal">
+//       <div className="text-lg">{title}</div>
+//       <div className="font-sans font-bold">{content}</div>
+//       {links && (
+//         <div className="flex flex-col space-y-3">
+//           {links.map((link) => (
+//             <a
+//               href={link.link}
+//               className="font-sans font-bold text-red-500 hover:underline"
+//             >
+//               {link.title}
+//             </a>
+//           ))}
+//         </div>
+//       )}
+//     </Card>
+//   );
+// };
 
 const Header = () => {
   const options = [
@@ -160,26 +160,26 @@ const Header = () => {
   );
 };
 
-const EventTimeline = () => {
-  return (
-    <a id="timeline">
-      <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
-        <TitlePanel>Event Timeline [14th March - 21st March]</TitlePanel>
-        <div className="w-full grid grid-cols-1 md:grid-cols:2 lg:grid-cols-3">
-          <Challenge
-            title="Session1"
-            content="1:15PM - 2:45PM [Solving Challenges]"
-          />
-          <Challenge title="Session2" content="4:25PM - 5:55PM [Mini-Event]" />
-          <Challenge
-            title="Session3"
-            content="9:00PM onwards [Leaderboard Update]"
-          />
-        </div>
-      </div>
-    </a>
-  );
-};
+// const EventTimeline = () => {
+//   return (
+//     <a id="timeline">
+//       <div className="flex flex-col px-5 space-y-5 mt-12 items-start">
+//         <TitlePanel>Event Timeline [14th March - 21st March]</TitlePanel>
+//         <div className="w-full grid grid-cols-1 md:grid-cols:2 lg:grid-cols-3">
+//           <Challenge
+//             title="Session1"
+//             content="1:15PM - 2:45PM [Solving Challenges]"
+//           />
+//           <Challenge title="Session2" content="4:25PM - 5:55PM [Mini-Event]" />
+//           <Challenge
+//             title="Session3"
+//             content="9:00PM onwards [Leaderboard Update]"
+//           />
+//         </div>
+//       </div>
+//     </a>
+//   );
+// };
 
 // const DailyChallenges = ({
 //   daily,
@@ -232,7 +232,7 @@ const Ranking = ({
   hacker,
 }: {
   guild: { name: string; score: number }[];
-  hacker: { name: string; username: string; score: number }[];
+  hacker: { name: string; score: number }[];
 }) => {
   return (
     <a id="ranking">
@@ -270,11 +270,10 @@ const Ranking = ({
                   <ul className="space-y-4 mt-8">
                     {hacker
                       .sort((a, b) => b.score - a.score)
-                      .map(({ name, username, score }) => (
+                      .map(({ name, score }) => (
                         <li className="flex">
                           <div className="flex-1 mr-6">
                             <div className="text-base lg:text-2xl">{name}</div>
-                            <div className="text-gray-600">{username}</div>
                           </div>
                           <div className="w-40 text-base lg:text-2xl">
                             {score}
