@@ -75,7 +75,6 @@ const EmailSection = () => {
           <input
             className="h-12 w-72 bg-secondary dark:bg-white text-white dark:text-black font-medium px-4 rounded border border-transparent focus:outline-none focus:ring-4 focus:ring-primary focus:border-transparent shadow-sm"
             placeholder="Enter your email"
-            autoFocus={true}
             ref={inputRef}
           />
         )}
