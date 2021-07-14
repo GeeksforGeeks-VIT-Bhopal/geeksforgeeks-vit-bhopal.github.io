@@ -5,6 +5,7 @@ import { Route, HashRouter, Switch, Redirect } from "react-router-dom";
 // Pages
 import Home from "./pages/Home";
 import Team from "./pages/Team";
+import GeekWeekLocal from "./pages/GeekWeekLocal";
 import Layout from "./Layout";
 
 type ThemeType = "dark" | "light";
@@ -21,6 +22,9 @@ const App = () => {
       <div className={theme}>
         <Layout>
           <Switch>
+            <Route exact path="/geekweeklocal">
+              <GeekWeekLocal handleTheme={handleTheme} />
+            </Route>
             <Route exact path="/team">
               <Team handleTheme={handleTheme} />
             </Route>

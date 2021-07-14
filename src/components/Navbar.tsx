@@ -27,6 +27,9 @@ const Navbar: React.FC<NavbarProps> = ({
           </div>
         </Link>
         <div className="z-10 flex-wrap flex justify-end">
+          <Link to="/geekweeklocal" className="h-12 ml-3 mb-3">
+            <Primary>Geek Week: Local</Primary>
+          </Link>
           <Link to="/" className="h-12 ml-3 mb-3">
             <Secondary>Home</Secondary>
           </Link>
