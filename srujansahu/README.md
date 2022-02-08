@@ -1,0 +1,1 @@
+I am Srujan Sahu. I am a Singer and Mix Engineer, and I have a lot of knowledge when it comes to programming and designing sound. On the coding side of things, I'm not that great, but I do know my basics and intermediates and would probably improve a lot over time. I know Java, Python and C++ currently, and am looking forward to learn a lot of new things.
